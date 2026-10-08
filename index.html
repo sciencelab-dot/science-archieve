@@ -3,31 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>과학 실전 문제 아카이브</title>
+    <title>통합과학 모의고사 ARCHIEVE</title>
     <style>
-        body { font-family: 'Malgun Gothic', sans-serif; background-color: #f3f4f6; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; margin: 0; }
-        h1 { color: #1f2937; margin-bottom: 40px; font-size: 32px; letter-spacing: 2px; }
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; width: 100%; max-width: 1000px; }
-        .date-box { 
-            background-color: white; border-radius: 12px; padding: 30px; text-decoration: none; color: #111827; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: transform 0.2s, box-shadow 0.2s; border-left: 6px solid #2563eb; display: block;
+        /* 기본 여백 및 폰트 초기화 */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            /* 깔끔한 웹 폰트 세팅 */
+            font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; 
+            background-color: #fafafa; /* 아주 밝은 쿨그레이 배경 */
+            color: #1a1a1a; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            min-height: 100vh;
         }
-        .date-box:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
-        .date { font-size: 16px; color: #6b7280; font-weight: bold; margin-bottom: 8px; }
-        .title { font-size: 22px; font-weight: bold; }
-        .prob-count { margin-top: 16px; display: inline-block; background-color: #eff6ff; color: #1d4ed8; padding: 4px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+        
+        /* 상단 헤더 영역 (모던한 느낌) */
+        .header {
+            width: 100%;
+            background-color: #ffffff;
+            padding: 70px 20px 50px;
+            text-align: center;
+            border-bottom: 1px solid #eaeaea;
+            margin-bottom: 50px;
+        }
+        .header h1 {
+            font-size: 34px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: #111827;
+            margin-bottom: 14px;
+        }
+        .header p {
+            font-size: 17px;
+            color: #6b7280;
+            letter-spacing: -0.5px;
+        }
+
+        /* 메인 컨텐츠 영역 */
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            padding: 0 20px;
+        }
+
+        /* 반응형 그리드 정렬 */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 28px;
+            padding-bottom: 80px;
+        }
+
+        /* 개별 문제 박스 (카드형 UI) */
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 36px 32px;
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid #f3f4f6;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03); /* 은은한 그림자 */
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* 마우스 올렸을 때 나타나는 상단 그라데이션 포인트 */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #374151, #111827); /* 모노톤 그라데이션 */
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        /* 마우스 호버 효과 */
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border-color: #e5e7eb;
+        }
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        /* 카드 내 날짜 및 문항수 뱃지 */
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .date {
+            font-size: 15px;
+            font-weight: 600;
+            color: #9ca3af;
+            letter-spacing: 0.5px;
+        }
+        .badge {
+            background-color: #f3f4f6;
+            color: #4b5563;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        /* 모의고사 제목 */
+        .title {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.4;
+            color: #1f2937;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        /* 하단 이동 버튼 */
+        .footer {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+            color: #374151;
+            font-weight: 700;
+        }
+        .footer svg {
+            width: 18px;
+            height: 18px;
+            margin-left: 6px;
+            transition: transform 0.2s;
+        }
+        .card:hover .footer svg {
+            transform: translateX(6px); /* 화살표가 우측으로 살짝 이동 */
+        }
     </style>
 </head>
 <body>
-    <h1>📘 과학 모의고사 아카이브</h1>
-    <div class="grid-container">
-        <!-- 10월 8일 문제 박스 -->
-        <a href="2026-10-08.html" class="date-box">
-            <div class="date">2026년 10월 8일</div>
-            <div class="title">통합과학 역학 고난도</div>
-            <div class="prob-count">총 3문항</div>
-        </a>
-        <!-- 추후 여기에 새로운 날짜 박스를 복사해서 계속 추가하시면 됩니다 -->
-    </div>
+    
+    <header class="header">
+        <h1>Science Exam Archive</h1>
+        <p> 통합과학 및 생명과학 모의고사 보관소</p>
+    </header>
+    
+    <main class="container">
+        <div class="grid">
+            
+            <!-- ✅ 10월 8일 문제 박스 -->
+            <a href="2026-10-08.html" class="card">
+                <div class="card-header">
+                    <span class="date">2026. 10. 08</span>
+                    <span class="badge">총 3문항</span>
+                </div>
+                <div class="title">통합과학 역학 고난도<br>실전 모의고사</div>
+                <div class="footer">
+                    문제 풀기
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </div>
+            </a>
+            
+            <!-- ✅ 내일 추가할 문제 박스 예시 (디자인 확인용) -->
+            <a href="#" class="card" style="opacity: 0.5;">
+                <div class="card-header">
+                    <span class="date">2026. 10. 09</span>
+                    <span class="badge">업데이트 예정</span>
+                </div>
+                <div class="title">통합과학 운동량과 충격량<br>자료 해석</div>
+                <div class="footer" style="color:#9ca3af;">
+                    준비 중
+                </div>
+            </a>
+
+        </div>
+    </main>
+
 </body>
 </html>
