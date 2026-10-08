@@ -99,9 +99,9 @@
            📱 스마트폰(모바일) 환경을 위한 반응형 최적화
            ========================================= */
         @media (max-width: 850px) {
-            /* 1. FLEX 구조를 강제로 쪼개어 좌우 배치를 상하 배치로 완전히 확정 (!important) */
+            /* 1. 억지로 노출시키는 오류 코드를 지우고, 방향만 세로(column)로 꺾어줍니다 */
             .main-wrapper, #explanation-view { 
-                display: block !important; 
+                flex-direction: column !important; 
                 padding: 0 10px; 
                 margin-top: 15px; 
             }
