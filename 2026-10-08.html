@@ -35,7 +35,10 @@
         .solution-box { display: none; width: 100%; margin-top: 20px; padding: 24px; background-color: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 16.5px; line-height: 1.7; box-sizing: border-box; }
         .solution-box.active { display: block; }
         i { font-family: serif; padding: 0 2px;}
-        sub { font-size: 0.75em; }
+
+        /* 아래첨자/위첨자 렌더링 강제 교정 CSS */
+        sub { vertical-align: sub; font-size: 0.75em; line-height: 1; }
+        sup { vertical-align: super; font-size: 0.75em; line-height: 1; }
 
         /* 네비게이션 버튼 (목록으로, 다음 문제) */
         .nav-bar { display: flex; justify-content: space-between; align-items: center; margin-top: 40px; padding-top: 20px; border-top: 2px dashed #d1d5db; }
@@ -72,194 +75,12 @@
                     <polygon points="116,110 124,110 120,119" fill="#9ca3af"/>
                 </svg>
             </div>
+            
             <!-- 그래프 (나) -->
             <div class="svg-box">
-                <svg width="280" height="180" viewBox="0 0 280 180" xmlns="http://www.w3.org/2000/svg">
+                <svg width="340" height="180" viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg">
+                    <!-- A 그래프 -->
                     <g transform="translate(10, 0)">
-                        <line x1="20" y1="140" x2="110" y2="140" stroke="black" stroke-width="2"/>
+                        <line x1="20" y1="140" x2="140" y2="140" stroke="black" stroke-width="2"/>
                         <line x1="20" y1="140" x2="20" y2="20" stroke="black" stroke-width="2"/>
-                        <polygon points="107,137 113,140 107,143" fill="black"/>
-                        <polygon points="17,25 20,17 23,25" fill="black"/>
-                        <text x="110" y="155" text-anchor="end" font-size="11" fill="black">시간</text>
-                        <text x="5" y="15" text-anchor="start" font-size="11" fill="black">속력</text>
-                        <text x="10" y="155" font-size="11" fill="black">0</text>
-                        <line x1="20" y1="140" x2="90" y2="50" stroke="#3b82f6" stroke-width="2.5"/>
-                        <line x1="20" y1="50" x2="90" y2="50" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="3,3"/>
-                        <line x1="90" y1="140" x2="90" y2="50" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="3,3"/>
-                        <circle cx="90" cy="50" r="3.5" fill="black"/>
-                        <text x="15" y="54" text-anchor="end" font-size="12" font-family="serif" fill="black">2<tspan font-style="italic">v</tspan></text>
-                        <text x="90" y="155" text-anchor="middle" font-size="12" font-family="serif" fill="black">2<tspan font-style="italic">t</tspan></text>
-                        <text x="55" y="175" text-anchor="middle" font-weight="bold" fill="black">A</text>
-                    </g>
-                    <g transform="translate(150, 0)">
-                        <line x1="20" y1="140" x2="110" y2="140" stroke="black" stroke-width="2"/>
-                        <line x1="20" y1="140" x2="20" y2="20" stroke="black" stroke-width="2"/>
-                        <polygon points="107,137 113,140 107,143" fill="black"/>
-                        <polygon points="17,25 20,17 23,25" fill="black"/>
-                        <text x="110" y="155" text-anchor="end" font-size="11" fill="black">시간</text>
-                        <text x="5" y="15" text-anchor="start" font-size="11" fill="black">속력</text>
-                        <text x="10" y="155" font-size="11" fill="black">0</text>
-                        <line x1="20" y1="140" x2="55" y2="95" stroke="#ef4444" stroke-width="2.5"/>
-                        <line x1="20" y1="95" x2="55" y2="95" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="3,3"/>
-                        <line x1="55" y1="140" x2="55" y2="95" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="3,3"/>
-                        <circle cx="55" cy="95" r="3.5" fill="black"/>
-                        <text x="15" y="99" text-anchor="end" font-size="12" font-family="serif" fill="black"><tspan font-style="italic">v</tspan></text>
-                        <text x="55" y="155" text-anchor="middle" font-size="12" font-family="serif" fill="black"><tspan font-style="italic">t</tspan></text>
-                        <text x="55" y="175" text-anchor="middle" font-weight="bold" fill="black">B</text>
-                    </g>
-                </svg>
-            </div>
-        </div>
-        <div class="bogi-box">
-            <div class="bogi-title"><span>&lt;보 기&gt;</span></div>
-            <ul class="bogi-list">
-                <li><span class="marker">ㄱ.</span> 물체에 작용하는 중력의 크기는 A가 B의 4배이다.</li>
-                <li><span class="marker">ㄴ.</span> 수평선 P에 도달할 때까지 낙하한 높이는 A가 B의 4배이다.</li>
-                <li><span class="marker">ㄷ.</span> 수평선 P를 지나는 순간 물체의 운동량의 크기는 A가 B의 4배이다.</li>
-            </ul>
-        </div>
-        <div class="options"><span>① ㄱ</span> <span>② ㄷ</span> <span>③ ㄱ, ㄴ</span> <span>④ ㄴ, ㄷ</span> <span>⑤ ㄱ, ㄴ, ㄷ</span></div>
-        <button class="solution-btn" onclick="toggleSol('sol1')">정답 및 해설 보기</button>
-        <div id="sol1" class="solution-box"><h3 style="color: #1d4ed8; margin-top: 0;">정답: ③ (ㄱ, ㄴ)</h3><p>ㄱ: 중력(무게)은 질량에 비례합니다.<br>ㄴ: v-t 그래프 넓이는 A가 2vt, B가 0.5vt 이므로 4배입니다.<br>ㄷ: 운동량(mv)은 A(8mv)가 B(mv)의 8배입니다.</p></div>
-    </div>
-
-    <!-- 문제 2 -->
-    <div id="prob2" class="problem-slide">
-        <div class="header-text"><span class="question-num">2.</span><div>그림은 쇠구슬 발사 장치를 이용하여 수평면으로부터 서로 다른 높이에 있는 쇠구슬 A를 가만히 놓는 순간, 쇠구슬 B를 수평 방향으로 발사시키는 모습을 나타낸 것이다. 표는 실험 Ⅰ, Ⅱ에서 A, B가 각각 수평면에 도달할 때까지의 낙하 시간과 B의 수평 도달 거리를 나타낸 것이다.</div></div>
-        <div class="condition-text">(단, A와 B의 크기 및 공기 저항은 무시한다.)</div>
-        <div class="assets-area">
-            <div class="svg-box">
-                <svg width="400" height="280" viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="10" y="240" width="380" height="20" fill="#d1d5db" stroke="#4b5563" stroke-width="2"/>
-                    <text x="50" y="255" font-size="16" font-weight="bold" fill="black">수평면</text>
-                    <circle cx="100" cy="120" r="12" fill="#d4a373" stroke="#8a5a44" stroke-width="1.5"/>
-                    <text x="100" y="100" text-anchor="middle" font-size="18" fill="black">A</text>
-                    <line x1="100" y1="135" x2="100" y2="230" stroke="black" stroke-width="1.5" stroke-dasharray="4,4"/>
-                    <polygon points="96,220 104,220 100,228" fill="black"/>
-                    <rect x="160" y="50" width="60" height="24" fill="#e5e7eb" stroke="#4b5563" stroke-width="1.5"/>
-                    <circle cx="230" cy="62" r="12" fill="#9ca3af" stroke="#4b5563" stroke-width="1.5"/>
-                    <text x="230" y="42" text-anchor="middle" font-size="18" fill="black">B</text>
-                    <path d="M 230 62 Q 330 62 360 228" fill="none" stroke="black" stroke-width="1.5"/>
-                    <circle cx="360" cy="228" r="12" fill="#9ca3af" stroke="#4b5563" stroke-width="1.5"/>
-                    <line x1="230" y1="260" x2="360" y2="260" stroke="black" stroke-width="1"/>
-                    <polygon points="235,257 235,263 230,260" fill="black"/>
-                    <polygon points="355,257 355,263 360,260" fill="black"/>
-                    <text x="295" y="275" text-anchor="middle" font-size="16" fill="black">수평 도달 거리</text>
-                </svg>
-            </div>
-            <table>
-                <thead><tr><th>실험</th><th>A의 낙하 시간</th><th>B의 낙하 시간</th><th>B의 수평 도달 거리</th></tr></thead>
-                <tbody>
-                    <tr><td><b>Ⅰ</b></td><td><i>t</i><sub>0</sub></td><td>2<i>t</i><sub>0</sub></td><td>2<i>R</i></td></tr>
-                    <tr><td><b>Ⅱ</b></td><td>2<i>t</i><sub>0</sub></td><td>3<i>t</i><sub>0</sub></td><td>6<i>R</i></td></tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="bogi-box">
-            <div class="bogi-title"><span>&lt;보 기&gt;</span></div>
-            <ul class="bogi-list">
-                <li><span class="marker">ㄱ.</span> B를 수평 방향으로 발사한 초기 속력은 실험 Ⅱ가 실험 Ⅰ의 2배이다.</li>
-                <li><span class="marker">ㄴ.</span> 수평면에 도달하기 직전, 연직 방향의 속력은 실험 Ⅰ의 B가 실험 Ⅰ의 A의 2배이다.</li>
-                <li><span class="marker">ㄷ.</span> 운동하는 동안 B에 작용하는 중력의 방향은 B의 운동 방향과 같다.</li>
-            </ul>
-        </div>
-        <div class="options"><span>① ㄱ</span> <span>② ㄴ</span> <span>③ ㄱ, ㄴ</span> <span>④ ㄴ, ㄷ</span> <span>⑤ ㄱ, ㄴ, ㄷ</span></div>
-        <button class="solution-btn" onclick="toggleSol('sol2')">정답 및 해설 보기</button>
-        <div id="sol2" class="solution-box"><h3 style="color: #1d4ed8; margin-top: 0;">정답: ③ (ㄱ, ㄴ)</h3><p>ㄱ: 수평속력(거리/시간)은 실험 Ⅰ이 R/t₀, Ⅱ가 2R/t₀ 이므로 2배입니다.<br>ㄴ: 연직속력은 낙하 시간에 비례하므로 2배입니다.<br>ㄷ: 중력은 연직 아래, 운동 방향은 접선이므로 일치하지 않습니다.</p></div>
-    </div>
-
-    <!-- 문제 3 -->
-    <div id="prob3" class="problem-slide">
-        <div class="header-text"><span class="question-num">3.</span><div>그림은 지표면 근처 서로 다른 높이에서 동시에 가만히 놓은 물체 A, B가 자유 낙하하는 모습을 나타낸 것이다. A의 질량은 <i>m</i>이고, B의 질량은 2<i>m</i>이다. A는 점 P<sub>A</sub>, Q<sub>A</sub>, R<sub>A</sub>를, B는 점 P<sub>B</sub>, Q<sub>B</sub>, R<sub>B</sub>를 순서대로 지나며, Q<sub>A</sub>와 P<sub>B</sub>는 수평면으로부터 같은 높이에 있다. 표는 두 물체를 놓은 순간부터 각 지점까지 도달하는 데 걸린 시간을 나타낸 것이다.</div></div>
-        <div class="condition-text">(단, 물체의 크기 및 공기 저항은 무시한다.)</div>
-        <div class="assets-area">
-            <div class="svg-box">
-                <svg width="400" height="320" viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="10" y="300" width="380" height="16" fill="#d1d5db" stroke="#4b5563" stroke-width="2"/>
-                    <text x="200" y="313" text-anchor="middle" font-size="14" font-weight="bold" fill="#374151">지 표 면</text>
-                    <line x1="120" y1="30" x2="120" y2="280" stroke="#9ca3af" stroke-width="2" stroke-dasharray="6,4"/>
-                    <circle cx="120" cy="30" r="10" fill="#fca5a5" stroke="#b91c1c" stroke-width="2"/>
-                    <circle cx="120" cy="50" r="10" fill="#fee2e2" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="2,2"/>
-                    <text x="95" y="55" text-anchor="end" font-weight="bold" fill="black">P<tspan baseline-shift="sub" font-size="10">A</tspan></text>
-                    <circle cx="120" cy="110" r="10" fill="#fca5a5" stroke="#b91c1c" stroke-width="2"/>
-                    <text x="95" y="115" text-anchor="end" font-weight="bold" fill="black">Q<tspan baseline-shift="sub" font-size="10">A</tspan></text>
-                    <circle cx="120" cy="210" r="10" fill="#fee2e2" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="2,2"/>
-                    <text x="95" y="215" text-anchor="end" font-weight="bold" fill="black">R<tspan baseline-shift="sub" font-size="10">A</tspan></text>
-
-                    <line x1="280" y1="90" x2="280" y2="280" stroke="#9ca3af" stroke-width="2" stroke-dasharray="6,4"/>
-                    <circle cx="280" cy="90" r="12" fill="#93c5fd" stroke="#1d4ed8" stroke-width="2"/>
-                    <circle cx="280" cy="110" r="12" fill="#93c5fd" stroke="#1d4ed8" stroke-width="2"/>
-                    <text x="305" y="115" text-anchor="start" font-weight="bold" fill="black">P<tspan baseline-shift="sub" font-size="10">B</tspan></text>
-                    <circle cx="280" cy="170" r="12" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="2,2"/>
-                    <text x="305" y="175" text-anchor="start" font-weight="bold" fill="black">Q<tspan baseline-shift="sub" font-size="10">B</tspan></text>
-                    <line x1="120" y1="110" x2="280" y2="110" stroke="#047857" stroke-width="2" stroke-dasharray="8,4"/>
-                    <text x="200" y="105" text-anchor="middle" font-size="13" font-weight="bold" fill="#047857">같은 높이</text>
-                </svg>
-            </div>
-            <table>
-                <thead><tr><th>물체</th><th>P 도달 시간</th><th>Q 도달 시간</th><th>R 도달 시간</th></tr></thead>
-                <tbody>
-                    <tr><td><b>A</b></td><td><i>t</i><sub>0</sub></td><td>2<i>t</i><sub>0</sub></td><td>3<i>t</i><sub>0</sub></td></tr>
-                    <tr><td><b>B</b></td><td><i>t</i><sub>0</sub></td><td>2<i>t</i><sub>0</sub></td><td>3<i>t</i><sub>0</sub></td></tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="bogi-box">
-            <div class="bogi-title"><span>&lt;보 기&gt;</span></div>
-            <ul class="bogi-list">
-                <li><span class="marker">ㄱ.</span> 가만히 놓은 순간, 두 물체의 높이 차이는 A가 P<sub>A</sub>까지 낙하한 거리의 3배이다.</li>
-                <li><span class="marker">ㄴ.</span> Q<sub>A</sub>를 지날 때 A의 운동량의 크기는 P<sub>B</sub>를 지날 때 B의 운동량의 크기와 같다.</li>
-                <li><span class="marker">ㄷ.</span> A가 P<sub>A</sub>에서 Q<sub>A</sub>까지 낙하하는 거리는 B가 Q<sub>B</sub>에서 R<sub>B</sub>까지 낙하하는 거리와 같다.</li>
-            </ul>
-        </div>
-        <div class="options"><span>① ㄱ</span> <span>② ㄷ</span> <span>③ ㄱ, ㄴ</span> <span>④ ㄴ, ㄷ</span> <span>⑤ ㄱ, ㄴ, ㄷ</span></div>
-        <button class="solution-btn" onclick="toggleSol('sol3')">정답 및 상세 해설 보기</button>
-        <div id="sol3" class="solution-box"><h3 style="color: #1d4ed8; margin-top: 0;">정답: ③ (ㄱ, ㄴ)</h3><p>ㄱ: Q<sub>A</sub>(2t₀)와 P<sub>B</sub>(t₀) 고도가 같습니다. A가 4h, B가 h 낙하했으므로 초기 차이는 3h입니다.<br>ㄴ: 속력은 시간에 비례합니다. A는 2v, B는 v이며 질량비가 1:2이므로 운동량은 같습니다.<br>ㄷ: 낙하 거리는 시간의 제곱비로 늘어납니다. A구간은 3h, B구간은 5h로 다릅니다.</p></div>
-    </div>
-
-    <!-- 네비게이션 버튼 (1문제 풀고 넘기기 기능) -->
-    <div class="nav-bar">
-        <a href="index.html" class="nav-btn btn-back">◀ 목록으로</a>
-        <button id="nextBtn" class="nav-btn btn-next" onclick="nextProblem()">
-            다음 문제 풀기 ▶
-            <span id="previewText" class="preview-text">미리보기: 쇠구슬 수평 투사 운동</span>
-        </button>
-    </div>
-
-</div>
-
-<script>
-    // 1문제씩 보여주는 자바스크립트 기능
-    let currentProb = 1;
-    const totalProb = 3;
-    const previewTitles = ["", "쇠구슬 수평 투사 운동", "자유 낙하하는 두 물체", "수고하셨습니다!"];
-
-    function nextProblem() {
-        if (currentProb < totalProb) {
-            // 현재 문제 숨기기
-            document.getElementById('prob' + currentProb).classList.remove('active');
-            currentProb++;
-            // 다음 문제 보이기
-            document.getElementById('prob' + currentProb).classList.add('active');
-            
-            // 버튼 텍스트 업데이트
-            if (currentProb === totalProb) {
-                document.getElementById('nextBtn').style.display = 'none'; // 마지막 문제면 다음 버튼 숨김
-            } else {
-                document.getElementById('previewText').innerText = "미리보기: " + previewTitles[currentProb];
-            }
-        }
-    }
-
-    // 해설 버튼 열기/닫기 기능
-    function toggleSol(id) {
-        var el = document.getElementById(id);
-        if (el.classList.contains('active')) {
-            el.classList.remove('active');
-        } else {
-            el.classList.add('active');
-        }
-    }
-</script>
-</body>
-</html>
+                        <polygon points="137,137 143
