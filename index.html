@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과학 실전 문제 아카이브</title>
+    <style>
+        body { font-family: 'Malgun Gothic', sans-serif; background-color: #f3f4f6; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; margin: 0; }
+        h1 { color: #1f2937; margin-bottom: 40px; font-size: 32px; letter-spacing: 2px; }
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; width: 100%; max-width: 1000px; }
+        .date-box { 
+            background-color: white; border-radius: 12px; padding: 30px; text-decoration: none; color: #111827; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: transform 0.2s, box-shadow 0.2s; border-left: 6px solid #2563eb; display: block;
+        }
+        .date-box:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
+        .date { font-size: 16px; color: #6b7280; font-weight: bold; margin-bottom: 8px; }
+        .title { font-size: 22px; font-weight: bold; }
+        .prob-count { margin-top: 16px; display: inline-block; background-color: #eff6ff; color: #1d4ed8; padding: 4px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>📘 과학 모의고사 아카이브</h1>
+    <div class="grid-container">
+        <!-- 10월 8일 문제 박스 -->
+        <a href="2026-10-08.html" class="date-box">
+            <div class="date">2026년 10월 8일</div>
+            <div class="title">통합과학 역학 고난도</div>
+            <div class="prob-count">총 3문항</div>
+        </a>
+        <!-- 추후 여기에 새로운 날짜 박스를 복사해서 계속 추가하시면 됩니다 -->
+    </div>
+</body>
+</html>
