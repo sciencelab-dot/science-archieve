@@ -10,8 +10,7 @@
         body { font-family: 'Pretendard', 'Malgun Gothic', sans-serif; background-color: #f3f4f6; color: #1f2937; line-height: 1.6; }
         
         /* 아래첨자 강제 교정 (위첨자 오작동 원천 차단) */
-        sub { vertical-align: baseline !important; position: relative; top: 0.4em; font-size: 0.75em !important; line-height: 0; }
-        i { font-family: 'Times New Roman', serif; padding: 0 2px;}
+        sub { vertical-align: -0.2em !important; font-size: 0.75em !important; position: static !important; line-height: inherit !important; }
 
         /* 상단 네비게이션바 */
         .top-bar { width: 100%; background: white; padding: 16px 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
@@ -317,10 +316,10 @@
                     </div>
                     <div class="bogi-box">
                         <div class="bogi-title"><span>&lt;보 기&gt;</span></div>
-                        <ul class="bogi-list">
-                            <li><span class="marker">ㄱ.</span> 가만히 놓은 순간, 두 물체의 높이 차이는 A가 P<sub>A</sub>까지 낙하한 거리의 3배이다.</li>
-                            <li><span class="marker">ㄴ.</span> Q<sub>A</sub>를 지날 때 A의 운동량의 크기는 P<sub>B</sub>를 지날 때 B의 운동량의 크기와 같다.</li>
-                            <li><span class="marker">ㄷ.</span> A가 P<sub>A</sub>에서 Q<sub>A</sub>까지 낙하하는 거리는 B가 Q<sub>B</sub>에서 R<sub>B</sub>까지 낙하하는 거리와 같다.</li>
+    <ul class="bogi-list">
+        <li><span class="marker">ㄱ.</span> 가만히 놓은 순간, 두 물체의 높이 차이는 A가 P<sub>A</sub>까지 낙하한 거리의 3배이다.</li>
+        <li><span class="marker">ㄴ.</span> Q<sub>A</sub>를 지날 때 A의 운동량의 크기는 P<sub>B</sub>를 지날 때 B의 운동량의 크기와 같다.</li>
+        <li><span class="marker">ㄷ.</span> A가 P<sub>A</sub>에서 Q<sub>A</sub>까지 낙하하는 거리는 B가 Q<sub>B</sub>에서 R<sub>B</sub>까지 낙하하는 거리와 같다.</li>
                         </ul>
                     </div>
                 </div> <!-- prob3-content 끝 -->
