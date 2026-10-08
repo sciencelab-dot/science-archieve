@@ -92,6 +92,27 @@
         
         /* 숨겨진 원본 해설 데이터 */
         .sol-data-hidden { display: none; }
+        /* =========================================
+           📱 스마트폰(모바일) 환경을 위한 반응형 최적화
+           ========================================= */
+        @media (max-width: 850px) {
+            /* 1. 양옆 나란히 배치를 위아래 스크롤 방식으로 변경 */
+            .main-wrapper, #explanation-view { flex-direction: column; padding: 0 10px; margin-top: 20px; }
+            
+            /* 2. 문제 영역과 OMR 사이드바가 화면 너비를 100% 쓰도록 확장 */
+            .problem-area, .omr-sidebar, .exp-left, .exp-right { width: 100%; position: static; }
+            
+            /* 3. 모바일 화면에 맞게 내부 여백 축소 */
+            .problem-slide { padding: 20px; }
+            .problem-top-nav { padding: 15px 20px 0; }
+            
+            /* 4. 그래프와 그림(SVG)이 스마트폰 화면 밖으로 나가지 않도록 자동 축소 */
+            .svg-box svg { max-width: 100%; height: auto; }
+            
+            /* 5. 5지선다 선택지가 찌그러지지 않도록 두 줄로 자동 줄바꿈 처리 */
+            .options-group { flex-wrap: wrap; gap: 10px; justify-content: flex-start; }
+            .option-label { width: 45%; }
+        }
     </style>
 </head>
 <body>
