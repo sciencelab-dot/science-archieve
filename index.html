@@ -153,14 +153,15 @@
         <p> 통합과학 및 생명과학 모의고사 보관소</p>
     </header>
     
-    <<main class="container">
+    <main class="container">
     
     <!-- 과목 필터 버튼 영역 -->
     <div class="filter-container">
         <!-- 버튼 클릭 시 filterExams('과목태그', this) 함수가 실행됩니다 -->
         <button class="filter-btn active" onclick="filterExams('all', this)">전체보기</button>
-        <button class="filter-btn" onclick="filterExams('earth', this)">지구과학</button>
         <button class="filter-btn" onclick="filterExams('physics', this)">물리학</button>
+        <button class="filter-btn" onclick="filterExams('chemical', this)">화학</button>
+        <button class="filter-btn" onclick="filterExams('earth', this)">지구과학</button>
         <button class="filter-btn" onclick="filterExams('life', this)">생명과학</button>
     </div>
 
