@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026-10-09 통합과학 역학</title> <!-- 날짜 수정 -->
+    
+    <!-- 💡 여기서 공용 디자인과 기능을 불러옵니다! -->
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- 문제 풀이 메인 화면 -->
+    <div id="test-view" class="main-wrapper">
+        
+        <!-- 왼쪽 문제 영역 -->
+        <div class="problem-area">
+            <div class="problem-top-nav">
+                <a href="index.html" class="btn-back-list">◀ 목록으로</a>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- 📝 여기에 새로운 1, 2, 3번 문제 HTML만 넣으시면 됩니다 -->
+            <!-- ========================================== -->
+
+        </div> <!-- problem-area 끝 -->
+
+        <!-- 오른쪽 OMR 사이드바 -->
+        <div class="omr-sidebar">
+            <div class="omr-title">답안 표기란</div>
+            <div class="omr-item" id="omr-1"><span class="num">1번</span><span class="ans" id="ans-1">-</span></div>
+            <div class="omr-item" id="omr-2"><span class="num">2번</span><span class="ans" id="ans-2">-</span></div>
+            <div class="omr-item" id="omr-3"><span class="num">3번</span><span class="ans" id="ans-3">-</span></div>
+        </div>
+    </div> <!-- main-wrapper 끝 -->
+
+    <!-- 결과 화면 및 양옆 분할 해설 뷰어 뼈대 -->
+    <div id="result-screen">
+        <div class="score-text" id="score-text">채점 중...</div>
+        <button class="btn-return" onclick="returnToIncorrect()">◀ 틀린 문제로 돌아가기</button>
+        <div class="exp-section-title">문항별 해설 보기</div>
+        <div class="exp-list">
+            <button class="exp-btn" onclick="openExplanation(1)">1번 문항 해설 열기</button>
+            <button class="exp-btn" onclick="openExplanation(2)">2번 문항 해설 열기</button>
+            <button class="exp-btn" onclick="openExplanation(3)">3번 문항 해설 열기</button>
+        </div>
+    </div>
+
+    <div id="explanation-view">
+        <div class="exp-left" id="exp-left-container"></div>
+        <div class="exp-right">
+            <button class="btn-nav btn-prev" style="margin-bottom:20px; font-size:14px; padding:8px 16px;" onclick="closeExplanation()">◀ 해설 닫기</button>
+            <div id="exp-right-content"></div>
+        </div>
+    </div>
+
+    <!-- 숨겨진 원본 해설 데이터 보관소 -->
+    <div class="sol-data-hidden">
+        <!-- 📝 여기에 1, 2, 3번 해설 데이터를 넣으시면 됩니다 -->
+    </div>
+
+</body>
+</html>
