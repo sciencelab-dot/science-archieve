@@ -25,17 +25,18 @@
         <div class="problem-area" style="flex: 1; background: #ffffff; border-radius: 8px; border-top: 5px solid #1e293b; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); padding: 32px; box-sizing: border-box;">
 
             <!-- 문제 1 -->
-            <div id="prob1" class="problem-slide active">
-            <div id="prob1-content">
+<div id="prob1" class="problem-slide active">
+    <div id="prob1-content">
         
-        <!-- 발문 -->
+        <!-- 3. 발문 글자 크기 물리 문제와 동일하게 (15px) 수정 -->
         <div class="header-text" style="font-size: 15px; font-weight: 500; line-height: 1.6; color: #1f2937; margin-bottom: 24px;">
             <span class="question-num" style="font-size: 16px; font-weight: bold; margin-right: 4px;">1.</span> 
-            그림은 판 A, B, C와 판의 경계 ㉠, ㉡을 나타낸 것이다. 화살표는 GPS로 측정한 판의 평균 이동 속도의 크기와 방향을, 표는 판 B 내부에 위치한 열점에서 생성된 화산섬 a, b, c의 절대 연령을 나타낸 것이다. 이에 대한 설명으로 옳은 것만을 &lt;보기&gt;에서 있는 대로 고른 것은?
+            그림은 판 A, B, C와 판의 경계 ㉠, ㉡을 나타낸 것이다. 화살표는 GPS로 측정한 판의 평균 이동 속도의 크기와 방향을, 표는 판 B 내부에 위치한 열점에서 생성된 화산섬 a, b, c의 절대 연령을 나타낸 것이다.
         </div>
 
         <!-- 자료 영역 (지도 + 표) -->
         <div class="materials-wrapper" style="display: flex; gap: 20px; align-items: center; justify-content: center; flex-wrap: wrap; margin: 24px 0;">
+            
             <!-- 왼쪽: 고해상도 인라인 SVG 지도 -->
             <div style="flex: 1.2; min-width: 280px; max-width: 380px;">
                 <svg viewBox="0 0 320 220" style="width: 100%; height: auto; border: 1.2px solid #a1a1aa; border-radius: 4px; background: #ffffff; font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;">
@@ -48,16 +49,16 @@
                     <line x1="220" y1="0" x2="220" y2="220" stroke="#000000" stroke-width="1.8" />
 
                     <!-- 판 이름 라벨 -->
-                    <text x="45" y="200" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">해양판 A</text>
-                    <text x="155" y="200" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">해양판 B</text>
-                    <text x="270" y="200" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">대륙판 C</text>
+                    <text x="45" y="200" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle">해양판 A</text>
+                    <text x="155" y="200" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle">해양판 B</text>
+                    <text x="270" y="200" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle">대륙판 C</text>
 
                     <!-- 경계 ㉠, ㉡ 기호 -->
-                    <circle cx="90" cy="35" r="9" fill="#ffffff" stroke="#000000" stroke-width="1" />
-                    <text x="90" y="39" font-size="11" text-anchor="middle" font-weight="bold">㉠</text>
+                    <circle cx="90" cy="35" r="10" fill="#ffffff" stroke="#000000" stroke-width="1" />
+                    <text x="90" y="39.5" font-size="12" text-anchor="middle" font-weight="bold">㉠</text>
 
-                    <circle cx="220" cy="35" r="9" fill="#ffffff" stroke="#000000" stroke-width="1" />
-                    <text x="220" y="39" font-size="11" text-anchor="middle" font-weight="bold">㉡</text>
+                    <circle cx="220" cy="35" r="10" fill="#ffffff" stroke="#000000" stroke-width="1" />
+                    <text x="220" y="39.5" font-size="12" text-anchor="middle" font-weight="bold">㉡</text>
 
                     <!-- GPS 이동 속도 벡터 -->
                     <!-- A판 (북서쪽) -->
@@ -65,10 +66,12 @@
                         <path d="M 60 70 L 40 50" /> <polygon points="40,50 48,51 44,56" fill="#2563eb" stroke="none"/>
                         <path d="M 55 120 L 35 100" /> <polygon points="35,100 43,101 39,106" fill="#2563eb" stroke="none"/>
                     </g>
+                    
+                    <!-- 2. 그림 글자 겹치지 않게 화살표와 텍스트 위치(x, y 좌표) 전면 수정 -->
                     <!-- B판 (북동쪽) -->
                     <g stroke="#dc2626" stroke-width="1.8" fill="none">
-                        <path d="M 115 150 L 135 135" /> <polygon points="135,135 127,139 131,144" fill="#dc2626" stroke="none"/>
-                        <path d="M 190 65 L 210 50" /> <polygon points="210,50 202,54 206,59" fill="#dc2626" stroke="none"/>
+                        <path d="M 115 155 L 135 140" /> <polygon points="135,140 127,144 131,149" fill="#dc2626" stroke="none"/>
+                        <path d="M 195 65 L 215 50" /> <polygon points="215,50 207,54 211,59" fill="#dc2626" stroke="none"/>
                     </g>
                     <!-- C판 (서북서쪽) -->
                     <g stroke="#16a34a" stroke-width="1.8" fill="none">
@@ -76,67 +79,73 @@
                         <path d="M 275 145 L 250 140" /> <polygon points="250,140 258,143 256,136" fill="#16a34a" stroke="none"/>
                     </g>
 
-                    <!-- 열점과 화산섬 -->
+                    <!-- 열점과 화산섬 (텍스트 겹침 완벽 해결) -->
                     <!-- 열점 (0 Ma) -->
                     <g transform="translate(105, 120)">
                         <polygon points="0,-9 2.5,-2.5 9,-2.5 4,1.5 6,8 0,4.5 -6,8 -4,1.5 -9,-2.5 -2.5,-2.5" fill="#dc2626" stroke="#000" stroke-width="0.5"/>
-                        <text x="-2" y="15" font-size="9.5" font-weight="bold" fill="#dc2626" text-anchor="middle">열점(0)</text>
                     </g>
+                    <text x="105" y="137" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">열점(0)</text>
+
                     <!-- 화산섬 a, b, c -->
                     <circle cx="132" cy="100" r="4.5" fill="#64748b" stroke="#000" stroke-width="0.8" />
-                    <text x="132" y="91" font-size="9" text-anchor="middle" font-weight="bold">a(10)</text>
+                    <text x="120" y="95" font-size="10" text-anchor="middle" font-weight="bold">a(10)</text>
 
                     <circle cx="159" cy="80" r="4.5" fill="#64748b" stroke="#000" stroke-width="0.8" />
-                    <text x="159" y="71" font-size="9" text-anchor="middle" font-weight="bold">b(20)</text>
+                    <text x="145" y="75" font-size="10" text-anchor="middle" font-weight="bold">b(20)</text>
 
                     <circle cx="186" cy="60" r="4.5" fill="#64748b" stroke="#000" stroke-width="0.8" />
-                    <text x="186" y="51" font-size="9" text-anchor="middle" font-weight="bold">c(30)</text>
+                    <text x="170" y="55" font-size="10" text-anchor="middle" font-weight="bold">c(30)</text>
 
-                    <text x="155" y="132" font-size="8.5" fill="#475569" text-anchor="middle">(단위: Ma)</text>
+                    <text x="175" y="110" font-size="9" fill="#475569" text-anchor="middle">(단위: Ma)</text>
 
                     <!-- 방위표 -->
                     <g transform="translate(295, 35)">
                         <line x1="0" y1="-15" x2="0" y2="15" stroke="#000" stroke-width="1.2"/>
                         <line x1="-12" y1="0" x2="12" y2="0" stroke="#000" stroke-width="0.5"/>
                         <polygon points="0,-17 -3,-10 3,-10" fill="#000" />
-                        <text x="0" y="-20" font-size="9" font-weight="bold" text-anchor="middle">N</text>
+                        <text x="0" y="-20" font-size="10" font-weight="bold" text-anchor="middle">N</text>
                     </g>
 
                     <!-- 범례 -->
                     <g transform="translate(12, 22)">
                         <line x1="0" y1="0" x2="20" y2="0" stroke="#000" stroke-width="1.2"/>
                         <polygon points="20,0 16,-2 16,2" fill="#000" stroke="none" />
-                        <text x="24" y="3" font-size="8.5" fill="#334155" font-weight="bold">GPS 이동 방향</text>
+                        <text x="24" y="3.5" font-size="9" fill="#334155" font-weight="bold">GPS 이동 방향</text>
                     </g>
                 </svg>
             </div>
 
-            <!-- 오른쪽: 화산섬 연령 표 -->
+            <!-- 1. 표 내부 글자 크기 통일 (font-size를 15px로 확대 적용) -->
             <div style="flex: 0.9; min-width: 200px;">
-                <table style="border-collapse: collapse; text-align: center; width: 100%; font-size: 13px; font-family: sans-serif; border-top: 2px solid #000000; border-bottom: 2px solid #000000;">
+                <table style="border-collapse: collapse; text-align: center; width: 100%; font-size: 15px; font-family: sans-serif; border-top: 2px solid #000000; border-bottom: 2px solid #000000;">
                     <thead>
                         <tr style="border-bottom: 1.2px solid #000000; background-color: #fafafa;">
-                            <th style="padding: 10px 4px; font-weight: 500; border-right: 1px solid #e5e7eb;">화산섬</th>
-                            <th style="padding: 10px 4px; font-weight: normal;">a</th>
-                            <th style="padding: 10px 4px; font-weight: normal;">b</th>
-                            <th style="padding: 10px 4px; font-weight: normal;">c</th>
+                            <th style="padding: 12px 6px; font-weight: 500; border-right: 1px solid #e5e7eb;">화산섬</th>
+                            <th style="padding: 12px 6px; font-weight: normal;">a</th>
+                            <th style="padding: 12px 6px; font-weight: normal;">b</th>
+                            <th style="padding: 12px 6px; font-weight: normal;">c</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td style="padding: 12px 4px; font-weight: 500; background-color: #fafafa; border-right: 1px solid #e5e7eb;">절대 연령(Ma)</td>
-                            <td style="padding: 12px 4px;">10</td>
-                            <td style="padding: 12px 4px;">20</td>
-                            <td style="padding: 12px 4px;">30</td>
+                            <td style="padding: 14px 6px; font-weight: 500; background-color: #fafafa; border-right: 1px solid #e5e7eb;">절대 연령(Ma)</td>
+                            <td style="padding: 14px 6px;">10</td>
+                            <td style="padding: 14px 6px;">20</td>
+                            <td style="padding: 14px 6px;">30</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
 
+        <!-- 4. 해당 문장을 그림/표 아래, 보기 박스 바로 위로 위치 이동 및 폰트 통일 -->
+        <div style="font-size: 15px; font-weight: 500; line-height: 1.6; color: #1f2937; margin-bottom: 15px;">
+            이에 대한 설명으로 옳은 것만을 &lt;보기&gt;에서 있는 대로 고른 것은?
+        </div>
+
         <!-- 보기 박스 -->
-        <div class="question-bogi" style="border: 1px solid #000000; padding: 20px; margin: 24px 0; font-size: 14.5px; line-height: 1.7; border-radius: 2px;">
-            <div style="text-align: center; font-weight: bold; margin-bottom: 15px; font-size: 14px;">&lt;보 기&gt;</div>
+        <div class="question-bogi" style="border: 1px solid #000000; padding: 20px; margin-bottom: 24px; font-size: 15px; line-height: 1.7; border-radius: 2px;">
+            <div style="text-align: center; font-weight: bold; margin-bottom: 15px; font-size: 15px;">&lt;보 기&gt;</div>
             <div style="margin-bottom: 8px; display: flex; gap: 4px;">
                 <span>ㄱ.</span> <span>㉠ 하부에는 상승하는 맨틀 물질이 존재한다.</span>
             </div>
@@ -161,20 +170,37 @@
 
     <!-- 하단 네비게이션 버튼 -->
     <div class="nav-buttons" style="display: flex; justify-content: space-between; align-items: center; padding-top: 15px;">
+        <button class="btn-nav btn-prev" style="visibility: hidden;">◀ 이전 문제</button>
+        <button class="btn-nav btn-next" onclick="navProb(2)">다음 문제 ▶</button>
+    </div>
+</div> <!-- prob1 끝 -->
+    <!-- 선지 영역 -->
+    <div class="options-group">
+        <label class="option-label"><input type="radio" name="ans1" value="1" onclick="markAnswer(1, 1)"> ① ㄱ</label>
+        <label class="option-label"><input type="radio" name="ans1" value="2" onclick="markAnswer(1, 2)"> ② ㄷ</label>
+        <label class="option-label"><input type="radio" name="ans1" value="3" onclick="markAnswer(1, 3)"> ③ ㄱ, ㄷ</label>
+        <label class="option-label"><input type="radio" name="ans1" value="4" onclick="markAnswer(1, 4)"> ④ ㄴ, ㄷ</label>
+        <label class="option-label"><input type="radio" name="ans1" value="5" onclick="markAnswer(1, 5)"> ⑤ ㄱ, ㄴ, ㄷ</label>
+    </div>
+
+    <!-- 하단 네비게이션 버튼 -->
+    <div class="nav-buttons" style="display: flex; justify-content: space-between; align-items: center; padding-top: 15px;">
         <!-- 1번 문제이므로 이전 버튼은 숨김 처리 -->
         <button class="btn-nav btn-prev" style="visibility: hidden;">◀ 이전 문제</button>
         <button class="btn-nav btn-next" onclick="navProb(2)">다음 문제 ▶</button>
     </div>
 </div> <!-- prob1 끝 -->
 
+<!-- ========================================== -->
 <!-- ▼ 문제 2 영역 시작 ▼ -->
+<!-- ========================================== -->
 <div id="prob2" class="problem-slide">
     <div id="prob2-content">
         
-        <!-- 발문 -->
+        <!-- 1, 3. 발문 글자 크기 15px 통일 및 텍스트 깨짐(세로 정렬) 버그 수정 -->
         <div class="header-text" style="font-size: 15px; font-weight: 500; line-height: 1.6; color: #1f2937; margin-bottom: 24px;">
             <span class="question-num" style="font-size: 16px; font-weight: bold; margin-right: 4px;">2.</span> 
-            그림 (가)는 지각을 구성하는 주요 광물의 <strong>기본 단위체</strong> 모형을, (나)는 (가)의 중심 원소 X에 불순물을 도핑하여 만든 p-n 접합 <strong>반도체</strong> 소자를 이용한 <strong>회로의 구성</strong>을 나타낸 것이다. 그래프 (다)는 이 회로의 저항 R에 흐르는 <strong>전류의 흐름</strong>을 시간에 따라 나타낸 것이다. 이에 대한 설명으로 옳은 것만을 &lt;보기&gt;에서 있는 대로 고른 것은?
+            그림 (가)는 지각을 구성하는 주요 광물의 기본 단위체 모형을, (나)는 (가)의 중심 원소 X에 불순물을 도핑하여 만든 p-n 접합 반도체 소자를 이용한 회로의 구성을 나타낸 것이다. 그래프 (다)는 이 회로의 저항 R에 흐르는 전류를 시간에 따라 나타낸 것이다.
         </div>
 
         <!-- 자료 영역 (가: 구조, 나: 회로, 다: 그래프) -->
@@ -203,7 +229,10 @@
                     <text x="35" y="119" font-size="12" font-weight="bold" fill="white" text-anchor="middle">Y</text>
                     <circle cx="125" cy="115" r="12" fill="#ef4444" stroke="#7f1d1d" stroke-width="1"/>
                     <text x="125" y="119" font-size="12" font-weight="bold" fill="white" text-anchor="middle">Y</text>
+                    
+                    <!-- 빨간 동그라미에 누락된 Y 추가 -->
                     <circle cx="80" cy="135" r="12" fill="#ef4444" stroke="#7f1d1d" stroke-width="1"/>
+                    <text x="80" y="139" font-size="12" font-weight="bold" fill="white" text-anchor="middle">Y</text>
                     
                     <!-- X (규소, 중심) -->
                     <circle cx="80" cy="80" r="14" fill="#3b82f6" stroke="#1e3a8a" stroke-width="1"/>
@@ -244,7 +273,7 @@
             <!-- (다) 전류 그래프 -->
             <div style="flex: 1.2; min-width: 180px; text-align: center;">
                 <svg viewBox="0 0 200 160" style="width: 100%; max-width: 200px; height: auto; border: 1.2px solid #a1a1aa; border-radius: 4px; background: #ffffff; font-family: sans-serif;">
-                    <text x="10" y="20" font-size="12" font-weight="bold">(다)</text>
+                    <text x="10" y="18" font-size="12" font-weight="bold">(다)</text>
                     
                     <!-- 축 -->
                     <line x1="30" y1="120" x2="180" y2="120" stroke="#000" stroke-width="1.5" />
@@ -254,9 +283,9 @@
                     <polygon points="180,120 175,117 175,123" fill="#000" />
                     <polygon points="30,30 27,35 33,35" fill="#000" />
                     
-                    <!-- 라벨 -->
-                    <text x="180" y="135" font-size="11" text-anchor="end">시간($t$)</text>
-                    <text x="25" y="25" font-size="11" text-anchor="middle">전류($I$)</text>
+                    <!-- 2. 그림 자료 글자 겹침 수정 및 $ 기호(이탤릭체 오류) 제거 -->
+                    <text x="180" y="135" font-size="11" text-anchor="end">시간(t)</text>
+                    <text x="25" y="22" font-size="11" text-anchor="middle">전류(I)</text>
                     
                     <!-- 반파 정류 그래프 (사인파의 절반) -->
                     <path d="M 30 120 Q 55 40, 80 120 L 130 120 Q 155 40, 180 120" fill="none" stroke="#2563eb" stroke-width="2.5" />
@@ -270,17 +299,23 @@
             </div>
         </div>
 
+        <!-- 4. 해당 문장을 그림/표 아래, 보기 박스 바로 위로 위치 이동 -->
+        <div style="font-size: 15px; font-weight: 500; line-height: 1.6; color: #1f2937; margin-bottom: 15px;">
+            이에 대한 설명으로 옳은 것만을 &lt;보기&gt;에서 있는 대로 고른 것은?
+        </div>
+
         <!-- 보기 박스 -->
-        <div class="question-bogi" style="border: 1px solid #000000; padding: 20px; margin: 24px 0; font-size: 14.5px; line-height: 1.7; border-radius: 2px;">
-            <div style="text-align: center; font-weight: bold; margin-bottom: 15px; font-size: 14px;">&lt;보 기&gt;</div>
+        <div class="question-bogi" style="border: 1px solid #000000; padding: 20px; margin-bottom: 24px; font-size: 15px; line-height: 1.7; border-radius: 2px;">
+            <div style="text-align: center; font-weight: bold; margin-bottom: 15px; font-size: 15px;">&lt;보 기&gt;</div>
             <div style="margin-bottom: 8px; display: flex; gap: 4px;">
                 <span>ㄱ.</span> <span>원소 X는 탄소(C)와 같은 족 원소로, 최대 4개의 원자와 공유 결합을 할 수 있다.</span>
             </div>
             <div style="margin-bottom: 8px; display: flex; gap: 4px;">
-                <span>ㄴ.</span> <span>(가)의 기본 단위체들이 산소 원자를 서로 <strong>공유</strong>하여 결합하는 비율이 높아질수록, 구조 내 'X 원자 수에 대한 산소 원자 수의 비'는 증가한다.</span>
+                <span>ㄴ.</span> <span>(가)의 기본 단위체들이 산소 원자를 서로 공유하여 결합하는 비율이 높아질수록, 구조 내 'X 원자 수에 대한 산소 원자 수의 비'는 증가한다.</span>
             </div>
             <div style="display: flex; gap: 4px;">
-                <span>ㄷ.</span> <span>$t_1$ 시점일 때, (나)의 회로에서 전류는 A에서 B 방향으로 흐르며 반도체 소자의 p형 반도체는 교류 전원의 (+)극 쪽에 연결되어 있다.</span>
+                <!-- 이탤릭체($) 오류 수정 (유니코드 하첨자 사용) -->
+                <span>ㄷ.</span> <span>t₁ 시점일 때, (나)의 회로에서 전류는 A에서 B 방향으로 흐르며 반도체 소자의 p형 반도체는 교류 전원의 (+)극 쪽에 연결되어 있다.</span>
             </div>
         </div>
 
@@ -296,30 +331,35 @@
     </div>
 
     <!-- 하단 네비게이션 버튼 -->
-<div class="nav-buttons" style="display: flex; justify-content: space-between; align-items: center; padding-top: 15px;">
-    <button class="btn-nav btn-prev" onclick="navProb(1)">◀ 이전 문제</button>
-    <button class="btn-nav btn-next" onclick="navProb(3)">다음 문제 ▶</button>
-</div>
+    <div class="nav-buttons" style="display: flex; justify-content: space-between; align-items: center; padding-top: 15px;">
+        <button class="btn-nav btn-prev" onclick="navProb(1)">◀ 이전 문제</button>
+        <button class="btn-nav btn-next" onclick="navProb(3)">다음 문제 ▶</button>
+    </div>
 </div> <!-- prob2 끝 -->
+<!-- ========================================== -->
+<!-- ▲ 문제 2 영역 끝 ▲ -->
+<!-- ========================================== -->
 
+<!-- ========================================== -->
 <!-- ▼ 문제 3 영역 시작 (생명과학+지구과학 융합) ▼ -->
+<!-- ========================================== -->
 <div id="prob3" class="problem-slide">
     <div id="prob3-content">
         
-        <!-- 발문 -->
+        <!-- 발문 (마지막 문장 분리 및 글자 크기 15px 통일) -->
         <div class="header-text" style="font-size: 15px; font-weight: 500; line-height: 1.6; color: #1f2937; margin-bottom: 24px;">
             <span class="question-num" style="font-size: 16px; font-weight: bold; margin-right: 4px;">3.</span> 
-            그림 (가)는 동태평양 적도 해역에서 측정한 '수온 약층이 시작되는 깊이의 편차(관측값 - 평년값)'를, (나)는 동일 해역 해양 생태계의 시기 Ⅰ과 Ⅱ에 따른 '표층 식물성 플랑크톤의 총생산량'과 '1차 소비자(멸치 등)의 생물량'을 상대값으로 나타낸 것이다. Ⅰ과 Ⅱ는 각각 엘니뇨와 라니냐 시기 중 하나이다. 이에 대한 설명으로 옳은 것만을 &lt;보기&gt;에서 있는 대로 고른 것은?
+            그림 (가)는 동태평양 적도 해역에서 측정한 '수온 약층이 시작되는 깊이의 편차(관측값 - 평년값)'를, (나)는 동일 해역 해양 생태계의 시기 Ⅰ과 Ⅱ에 따른 '표층 식물성 플랑크톤의 총생산량'과 '1차 소비자(멸치 등)의 생물량'을 상대값으로 나타낸 것이다. Ⅰ과 Ⅱ는 각각 엘니뇨와 라니냐 시기 중 하나이다.
         </div>
 
         <!-- 자료 영역 (가: 지구과학 데이터, 나: 생명과학 데이터) -->
-        <div class="materials-wrapper" style="display: flex; gap: 20px; align-items: center; justify-content: center; flex-wrap: wrap; margin: 24px 0;">
+        <div class="materials-wrapper" style="display: flex; gap: 20px; align-items: flex-end; justify-content: center; flex-wrap: wrap; margin: 24px 0;">
             
-            <!-- (가) 수온 약층 깊이 편차 그래프 -->
+            <!-- (가) 수온 약층 깊이 편차 그래프 영역 -->
             <div style="flex: 1.2; min-width: 250px; text-align: center;">
-                <svg viewBox="0 0 280 180" style="width: 100%; max-width: 300px; height: auto; border: 1.2px solid #a1a1aa; border-radius: 4px; background: #ffffff; font-family: sans-serif;">
-                    <text x="10" y="20" font-size="12" font-weight="bold">(가)</text>
-                    <text x="140" y="20" font-size="11" text-anchor="middle" fill="#475569">동태평양 수온 약층 시작 깊이 편차</text>
+                <svg viewBox="0 0 280 180" style="width: 100%; max-width: 300px; height: auto; border: 1.2px solid #a1a1aa; border-radius: 4px; background: #ffffff; font-family: sans-serif; display: block;">
+                    <!-- 제목 위치 조정 -->
+                    <text x="150" y="16" font-size="11" text-anchor="middle" fill="#475569">동태평양 수온 약층 시작 깊이 편차</text>
                     
                     <!-- 축 및 기준선 -->
                     <line x1="40" y1="90" x2="260" y2="90" stroke="#000" stroke-width="1.5" />
@@ -330,9 +370,9 @@
                     <polygon points="40,30 37,35 43,35" fill="#000" />
                     <polygon points="40,160 37,155 43,155" fill="#000" />
                     
-                    <!-- 라벨 -->
-                    <text x="260" y="105" font-size="10" text-anchor="end">시간</text>
-                    <text x="35" y="25" font-size="10" text-anchor="end">깊음(+)</text>
+                    <!-- 겹치던 축 라벨 위치 완벽하게 분리 -->
+                    <text x="255" y="105" font-size="10" text-anchor="middle">시간</text>
+                    <text x="35" y="22" font-size="10" text-anchor="end">깊음(+)</text>
                     <text x="35" y="165" font-size="10" text-anchor="end">얕음(-)</text>
                     <text x="30" y="94" font-size="11" text-anchor="end">0</text>
                     
@@ -345,27 +385,30 @@
                     <text x="95" y="45" font-size="14" font-weight="bold" fill="#dc2626" text-anchor="middle">Ⅰ</text>
                     <text x="205" y="135" font-size="14" font-weight="bold" fill="#2563eb" text-anchor="middle">Ⅱ</text>
                 </svg>
+                <!-- 그림 (가) 하단 캡션 추가 -->
+                <div style="font-weight: bold; font-size: 14px; margin-top: 8px; color: #1f2937;">(가)</div>
             </div>
 
-            <!-- (나) 생태계 생산량/생물량 막대 그래프 -->
+            <!-- (나) 생태계 생산량/생물량 막대 그래프 영역 -->
             <div style="flex: 1.2; min-width: 250px; text-align: center;">
-                <svg viewBox="0 0 280 180" style="width: 100%; max-width: 300px; height: auto; border: 1.2px solid #a1a1aa; border-radius: 4px; background: #ffffff; font-family: sans-serif;">
-                    <text x="10" y="20" font-size="12" font-weight="bold">(나)</text>
+                <svg viewBox="0 0 280 180" style="width: 100%; max-width: 300px; height: auto; border: 1.2px solid #a1a1aa; border-radius: 4px; background: #ffffff; font-family: sans-serif; display: block;">
                     
                     <!-- 축 -->
                     <line x1="40" y1="150" x2="260" y2="150" stroke="#000" stroke-width="1.5" />
                     <line x1="40" y1="150" x2="40" y2="30" stroke="#000" stroke-width="1.5" />
                     
-                    <!-- 라벨 -->
-                    <text x="25" y="25" font-size="10" text-anchor="middle">상대값</text>
+                    <!-- 축 라벨 및 범례 겹침 해결을 위한 위치 재조정 -->
+                    <text x="40" y="18" font-size="10" text-anchor="middle">상대값</text>
+                    
+                    <!-- 범례 위치를 오른쪽으로 약간 이동 -->
+                    <rect x="75" y="9" width="10" height="10" fill="#22c55e" stroke="#166534" stroke-width="1" />
+                    <text x="90" y="18" font-size="9" fill="#1f2937">총생산량(생산자)</text>
+                    <rect x="165" y="9" width="10" height="10" fill="#f59e0b" stroke="#b45309" stroke-width="1" />
+                    <text x="180" y="18" font-size="9" fill="#1f2937">생물량(1차 소비자)</text>
+
+                    <!-- x축 라벨 -->
                     <text x="100" y="165" font-size="12" font-weight="bold" text-anchor="middle">시기 Ⅰ</text>
                     <text x="200" y="165" font-size="12" font-weight="bold" text-anchor="middle">시기 Ⅱ</text>
-                    
-                    <!-- 범례 -->
-                    <rect x="60" y="15" width="10" height="10" fill="#22c55e" stroke="#166534" stroke-width="1" />
-                    <text x="75" y="24" font-size="9" fill="#1f2937">총생산량(생산자)</text>
-                    <rect x="150" y="15" width="10" height="10" fill="#f59e0b" stroke="#b45309" stroke-width="1" />
-                    <text x="165" y="24" font-size="9" fill="#1f2937">생물량(1차 소비자)</text>
                     
                     <!-- 막대 그래프 시기 Ⅰ (엘니뇨 - 붕괴) -->
                     <rect x="75" y="120" width="20" height="30" fill="#22c55e" stroke="#166534" stroke-width="1" />
@@ -375,12 +418,19 @@
                     <rect x="175" y="50" width="20" height="100" fill="#22c55e" stroke="#166534" stroke-width="1" />
                     <rect x="205" y="70" width="20" height="80" fill="#f59e0b" stroke="#b45309" stroke-width="1" />
                 </svg>
+                <!-- 그림 (나) 하단 캡션 추가 -->
+                <div style="font-weight: bold; font-size: 14px; margin-top: 8px; color: #1f2937;">(나)</div>
             </div>
         </div>
 
+        <!-- 해당 문장을 그림 밑, 보기 박스 바로 위로 분리하여 배치 -->
+        <div style="font-size: 15px; font-weight: 500; line-height: 1.6; color: #1f2937; margin-bottom: 15px;">
+            이에 대한 설명으로 옳은 것만을 &lt;보기&gt;에서 있는 대로 고른 것은?
+        </div>
+
         <!-- 보기 박스 -->
-        <div class="question-bogi" style="border: 1px solid #000000; padding: 20px; margin: 24px 0; font-size: 14.5px; line-height: 1.7; border-radius: 2px;">
-            <div style="text-align: center; font-weight: bold; margin-bottom: 15px; font-size: 14px;">&lt;보 기&gt;</div>
+        <div class="question-bogi" style="border: 1px solid #000000; padding: 20px; margin-bottom: 24px; font-size: 15px; line-height: 1.7; border-radius: 2px;">
+            <div style="text-align: center; font-weight: bold; margin-bottom: 15px; font-size: 15px;">&lt;보 기&gt;</div>
             <div style="margin-bottom: 8px; display: flex; gap: 4px;">
                 <span>ㄱ.</span> <span>평상시 부는 무역풍의 세기는 Ⅰ 시기가 Ⅱ 시기보다 강하다.</span>
             </div>
@@ -406,11 +456,12 @@
     <!-- 하단 네비게이션 버튼 -->
     <div class="nav-buttons" style="display: flex; justify-content: space-between; align-items: center; padding-top: 15px;">
         <button class="btn-nav btn-prev" onclick="navProb(2)">◀ 이전 문제</button>
-        <!-- 마지막 문제이므로 '결과 보기' 류의 시스템 버튼을 배치하거나 비워둡니다. -->
-        <!-- 기존 채점 시스템 버튼이 없다면 알림창을 띄우는 임시 버튼을 둡니다. -->
-        <button class="btn-nav btn-next" style="background-color:#059669; color:white; border:none; padding:10px 20px; border-radius:4px; cursor:pointer;" onclick="alert('모든 문항을 풀었습니다! 답안을 확인하세요.')">종료 및 채점 완료 ✔</button>
+        <button class="btn-nav btn-next" style="background-color:#059669; color:white; border:none; padding:10px 20px; border-radius:4px; cursor:pointer;" onclick="submitTest()">종료 및 채점 완료 ✔</button>
     </div>
 </div> <!-- prob3 끝 -->
+<!-- ========================================== -->
+<!-- ▲ 문제 3 영역 끝 ▲ -->
+<!-- ========================================== -->
 
 </div>
 
