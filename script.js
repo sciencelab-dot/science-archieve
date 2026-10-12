@@ -1,4 +1,3 @@
-<script>
     let firstIncorrect = null;
 
     // 답안 마킹 함수
