@@ -1,7 +1,4 @@
 <script>
-    const totalProb = 3;
-    let answers = {1: 0, 2: 0, 3: 0};
-    const correctAnswers = {1: 3, 2: 3, 3: 3}; 
     let firstIncorrect = null;
 
     // 답안 마킹 함수
