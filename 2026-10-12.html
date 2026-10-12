@@ -189,8 +189,8 @@
         <!-- 자료 영역 (가: 구조, 나: 회로, 다: 그래프) -->
         <div class="materials-wrapper" style="display: flex; gap: 15px; align-items: flex-end; justify-content: center; flex-wrap: wrap; margin: 24px 0;">
             
-            <!-- (가) 규산염 기본 단위체 영역 -->
-            <div style="flex: 1; min-width: 150px; text-align: center;">
+            <!-- (가) 규산염 기본 단위체 영역 (중앙 정렬 적용) -->
+            <div style="flex: 1; min-width: 150px; display: flex; flex-direction: column; align-items: center;">
                 <svg viewBox="0 0 160 160" style="width: 100%; max-width: 160px; height: auto; border: 1.2px solid #a1a1aa; border-radius: 4px; background: #ffffff; font-family: sans-serif; display: block;">
                     
                     <!-- 사면체 결합 선 -->
@@ -211,8 +211,6 @@
                     <text x="35" y="119" font-size="12" font-weight="bold" fill="white" text-anchor="middle">Y</text>
                     <circle cx="125" cy="115" r="12" fill="#ef4444" stroke="#7f1d1d" stroke-width="1"/>
                     <text x="125" y="119" font-size="12" font-weight="bold" fill="white" text-anchor="middle">Y</text>
-                    
-                    <!-- 빨간 동그라미에 누락된 Y 추가 -->
                     <circle cx="80" cy="135" r="12" fill="#ef4444" stroke="#7f1d1d" stroke-width="1"/>
                     <text x="80" y="139" font-size="12" font-weight="bold" fill="white" text-anchor="middle">Y</text>
                     
@@ -220,12 +218,12 @@
                     <circle cx="80" cy="80" r="14" fill="#3b82f6" stroke="#1e3a8a" stroke-width="1"/>
                     <text x="80" y="84" font-size="14" font-weight="bold" fill="white" text-anchor="middle">X</text>
                 </svg>
-                <!-- 그림 (가) 하단 캡션 분리 -->
-                <div style="font-weight: bold; font-size: 14px; margin-top: 8px; color: #1f2937;">(가)</div>
+                <!-- 그림 (가) 하단 캡션 분리 및 중앙 정렬 -->
+                <div style="font-weight: bold; font-size: 14px; margin-top: 8px; color: #1f2937; text-align: center;">(가)</div>
             </div>
 
-            <!-- (나) 회로도 영역 -->
-            <div style="flex: 1.2; min-width: 180px; text-align: center;">
+            <!-- (나) 회로도 영역 (중앙 정렬 적용) -->
+            <div style="flex: 1.2; min-width: 180px; display: flex; flex-direction: column; align-items: center;">
                 <svg viewBox="0 0 200 160" style="width: 100%; max-width: 200px; height: auto; border: 1.2px solid #a1a1aa; border-radius: 4px; background: #ffffff; font-family: sans-serif; display: block;">
                     
                     <!-- 회로 선 -->
@@ -247,44 +245,46 @@
                     <polyline points="160,55 155,60 165,70 155,80 165,90 155,100 160,105" fill="none" stroke="#000" stroke-width="2"/>
                     <text x="175" y="84" font-size="12" font-weight="bold" text-anchor="middle">R</text>
                     
-                    <!-- 방향 표시 A, B 겹침 수정 (좌표 이동) -->
+                    <!-- 방향 표시 A, B 겹침 수정 -->
                     <text x="172" y="50" font-size="11" font-weight="bold" fill="#dc2626" text-anchor="middle">A</text>
                     <text x="172" y="118" font-size="11" font-weight="bold" fill="#2563eb" text-anchor="middle">B</text>
                 </svg>
-                <!-- 그림 (나) 하단 캡션 분리 -->
-                <div style="font-weight: bold; font-size: 14px; margin-top: 8px; color: #1f2937;">(나)</div>
+                <!-- 그림 (나) 하단 캡션 분리 및 중앙 정렬 -->
+                <div style="font-weight: bold; font-size: 14px; margin-top: 8px; color: #1f2937; text-align: center;">(나)</div>
             </div>
 
-            <!-- (다) 전류 그래프 영역 -->
-            <div style="flex: 1.2; min-width: 180px; text-align: center;">
-                <svg viewBox="0 0 200 160" style="width: 100%; max-width: 200px; height: auto; border: 1.2px solid #a1a1aa; border-radius: 4px; background: #ffffff; font-family: sans-serif; display: block;">
+            <!-- (다) 전류 그래프 영역 (중앙 정렬 적용 및 잘림 수정) -->
+            <div style="flex: 1.2; min-width: 180px; display: flex; flex-direction: column; align-items: center;">
+                <!-- 여백 확보를 위해 viewBox의 x 시작점을 -10으로 늘림 -->
+                <svg viewBox="-10 0 210 160" style="width: 100%; max-width: 200px; height: auto; border: 1.2px solid #a1a1aa; border-radius: 4px; background: #ffffff; font-family: sans-serif; display: block;">
                     
-                    <!-- 축 -->
-                    <line x1="30" y1="120" x2="180" y2="120" stroke="#000" stroke-width="1.5" />
-                    <line x1="30" y1="120" x2="30" y2="30" stroke="#000" stroke-width="1.5" />
+                    <!-- 축 (x 좌표를 오른쪽으로 이동하여 여백 확보) -->
+                    <line x1="40" y1="120" x2="190" y2="120" stroke="#000" stroke-width="1.5" />
+                    <line x1="40" y1="120" x2="40" y2="30" stroke="#000" stroke-width="1.5" />
                     
                     <!-- 화살표 -->
-                    <polygon points="180,120 175,117 175,123" fill="#000" />
-                    <polygon points="30,30 27,35 33,35" fill="#000" />
+                    <polygon points="190,120 185,117 185,123" fill="#000" />
+                    <polygon points="40,30 37,35 43,35" fill="#000" />
                     
-                    <!-- 그림 자료 글자 겹침 수정 (좌표 이동) -->
-                    <text x="175" y="135" font-size="11" text-anchor="end">시간(t)</text>
-                    <text x="25" y="25" font-size="11" text-anchor="end">전류(I)</text>
+                    <!-- 축 이름 겹침 방지 (좌표 재조정) -->
+                    <text x="185" y="135" font-size="11" text-anchor="end">시간(t)</text>
+                    <!-- '전류(I)' 텍스트가 잘리지 않도록 위치 조정 -->
+                    <text x="40" y="22" font-size="11" text-anchor="middle">전류(I)</text>
                     
-                    <!-- 반파 정류 그래프 (사인파의 절반) -->
-                    <path d="M 30 120 Q 55 40, 80 120 L 130 120 Q 155 40, 180 120" fill="none" stroke="#2563eb" stroke-width="2.5" />
+                    <!-- 반파 정류 그래프 (사인파의 절반, x좌표 +10 이동) -->
+                    <path d="M 40 120 Q 65 40, 90 120 L 140 120 Q 165 40, 190 120" fill="none" stroke="#2563eb" stroke-width="2.5" />
                     
-                    <!-- t1, t2 표시 -->
-                    <line x1="55" y1="120" x2="55" y2="125" stroke="#000" stroke-width="1" />
-                    <text x="55" y="135" font-size="10" text-anchor="middle">t₁</text>
-                    <line x1="105" y1="120" x2="105" y2="125" stroke="#000" stroke-width="1" />
-                    <text x="105" y="135" font-size="10" text-anchor="middle">t₂</text>
+                    <!-- t1, t2 표시 (x좌표 +10 이동) -->
+                    <line x1="65" y1="120" x2="65" y2="125" stroke="#000" stroke-width="1" />
+                    <text x="65" y="135" font-size="10" text-anchor="middle">t₁</text>
+                    <line x1="115" y1="120" x2="115" y2="125" stroke="#000" stroke-width="1" />
+                    <text x="115" y="135" font-size="10" text-anchor="middle">t₂</text>
                 </svg>
-                <!-- 그림 (다) 하단 캡션 분리 -->
-                <div style="font-weight: bold; font-size: 14px; margin-top: 8px; color: #1f2937;">(다)</div>
+                <!-- 그림 (다) 하단 캡션 분리 및 중앙 정렬 -->
+                <div style="font-weight: bold; font-size: 14px; margin-top: 8px; color: #1f2937; text-align: center;">(다)</div>
             </div>
         </div>
-
+        
         <div style="font-size: 15px; font-weight: 500; line-height: 1.6; color: #1f2937; margin-bottom: 15px;">
             이에 대한 설명으로 옳은 것만을 &lt;보기&gt;에서 있는 대로 고른 것은?
         </div>
