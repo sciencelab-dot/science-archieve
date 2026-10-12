@@ -89,6 +89,39 @@
         /* 숨겨진 원본 해설 데이터 */
         .sol-data-hidden { display: none; }
 
+        /* 과목 필터 버튼 컨테이너 */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+/* 기본 버튼 스타일 */
+.filter-btn {
+    padding: 8px 16px;
+    border: 1px solid #e2e8f0;
+    background-color: #ffffff;
+    color: #475569;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* 마우스 올렸을 때 */
+.filter-btn:hover {
+    background-color: #f1f5f9;
+}
+
+/* 버튼이 선택되었을 때 (활성화) */
+.filter-btn.active {
+    background-color: #1e293b;
+    color: #ffffff;
+    border-color: #1e293b;
+}
+
         /* =========================================
            📱 스마트폰(모바일) 환경을 위한 반응형 최적화
            ========================================= */
@@ -139,3 +172,4 @@
                 font-size: 14px;
             }
         }
+
