@@ -1,0 +1,141 @@
+<style>
+        /* 기본 여백 및 폰트 초기화 (글자 찢어짐 방지) */
+        * { margin: 0; padding: 0; box-sizing: border-box; word-break: keep-all; overflow-wrap: break-word; }
+        body { font-family: 'Pretendard', 'Malgun Gothic', sans-serif; background-color: #f3f4f6; color: #1f2937; line-height: 1.6; padding-bottom: 50px; }
+        
+        /* 아래첨자 강제 교정 */
+        sub { vertical-align: -0.2em !important; font-size: 0.75em !important; position: static !important; line-height: inherit !important; }
+        i { font-family: 'Times New Roman', serif; padding: 0 2px;}
+
+        /* 메인 레이아웃 (PC 기준) */
+        .main-wrapper { display: flex; max-width: 1100px; margin: 40px auto 0; gap: 30px; padding: 0 20px; align-items: flex-start; }
+        
+        /* 왼쪽 문제 컨테이너 */
+        .problem-area { flex: 1; background: white; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-top: 8px solid #1f2937; overflow: hidden; position: relative; }
+        
+        /* 목록으로 버튼 */
+        .problem-top-nav { padding: 24px 40px 0; }
+        .btn-back-list { text-decoration: none; color: #6b7280; font-weight: bold; font-size: 15px; display: inline-flex; align-items: center; transition: color 0.2s; background: #f3f4f6; padding: 8px 16px; border-radius: 6px; }
+        .btn-back-list:hover { color: #2563eb; background: #eff6ff; }
+
+        .problem-slide { display: none; padding: 20px 40px 40px; animation: fadeIn 0.4s; }
+        .problem-slide.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* 오른쪽 OMR 사이드바 */
+        .omr-sidebar { width: 220px; background: white; border-radius: 12px; padding: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); position: sticky; top: 40px; }
+        .omr-title { font-size: 18px; font-weight: bold; border-bottom: 2px solid #e5e7eb; padding-bottom: 12px; margin-bottom: 16px; text-align: center; }
+        .omr-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 16px; }
+        .omr-item .num { font-weight: bold; color: #4b5563; }
+        .omr-item .ans { background: #f3f4f6; padding: 4px 12px; border-radius: 20px; color: #9ca3af; font-weight: bold; min-width: 40px; text-align: center; }
+        .omr-item.checked .ans { background: #2563eb; color: white; }
+
+        /* 문제 내부 요소 디자인 */
+        .header-text { display: flex; margin-bottom: 20px; font-size: 18px; margin-top: 10px; }
+        .question-num { font-size: 26px; font-weight: bold; margin-right: 12px; font-family: 'Times New Roman', serif; }
+        .condition-text { text-align: right; font-size: 14px; margin-bottom: 24px; color: #6b7280; }
+        .assets-area { display: flex; flex-direction: column; align-items: center; gap: 24px; margin-bottom: 30px; }
+        .svg-box { padding: 15px; background-color: white; border: 1px solid #d1d5db; border-radius: 4px; overflow-x: auto; max-width: 100%;}
+        table { width: 100%; max-width: 550px; border-collapse: collapse; border-top: 2px solid #111827; border-bottom: 2px solid #111827; text-align: center; }
+        th { background-color: #f9fafb; border-bottom: 1px solid #111827; padding: 12px; font-weight: bold; }
+        td { padding: 12px; border-bottom: 1px solid #e5e7eb; font-size: 17px; }
+        th, td { border-left: 1px solid #d1d5db; border-right: 1px solid #d1d5db; }
+        th:first-child, td:first-child { border-left: none; }
+        th:last-child, td:last-child { border-right: none; }
+        
+        /* 보기 박스 텍스트 분해 방지 */
+        .bogi-box { border: 1px solid #1f2937; padding: 24px; margin: 24px 0; font-size: 18px; }
+        .bogi-title { display: block; text-align: center; margin-bottom: 20px; }
+        .bogi-title span { border: 1px solid #1f2937; padding: 4px 16px; font-weight: bold; }
+        .bogi-list { list-style: none; padding-left: 10px; margin: 0; }
+        .bogi-list li { display: flex; align-items: flex-start; margin-bottom: 16px; }
+        .bogi-list span.marker { font-weight: bold; margin-right: 10px; flex-shrink: 0; }
+        .bogi-text { flex: 1; word-break: keep-all; }
+        
+        /* 5지선다 선택 라디오 버튼 영역 */
+        .options-group { display: flex; justify-content: space-around; font-size: 18px; margin-top: 30px; margin-bottom: 40px; background: #f9fafb; padding: 16px; border-radius: 8px; }
+        .option-label { display: flex; align-items: center; cursor: pointer; padding: 8px 12px; border-radius: 6px; transition: background 0.2s; }
+        .option-label:hover { background: #e5e7eb; }
+        .option-label input[type="radio"] { margin-right: 8px; transform: scale(1.2); cursor: pointer; }
+
+        /* 하단 이전/다음 버튼 */
+        .nav-buttons { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding-top: 20px; border-top: 2px dashed #e5e7eb; }
+        .btn-nav { padding: 12px 24px; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; border: none; transition: background 0.2s; }
+        .btn-prev { background-color: #f3f4f6; color: #4b5563; }
+        .btn-prev:hover { background-color: #e5e7eb; }
+        .btn-next { background-color: #374151; color: white; }
+        .btn-next:hover { background-color: #1f2937; }
+        .btn-submit { background-color: #2563eb; color: white; }
+        .btn-submit:hover { background-color: #1d4ed8; }
+
+        /* 결과 화면 */
+        #result-screen { display: none; max-width: 800px; margin: 50px auto; background: white; padding: 50px; border-radius: 12px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .score-text { font-size: 32px; font-weight: bold; margin-bottom: 30px; color: #111827; }
+        .btn-return { background: #f59e0b; color: white; padding: 14px 28px; font-size: 18px; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; margin-bottom: 40px; }
+        .btn-return:hover { background: #d97706; }
+        
+        /* 해설 목록 및 레이아웃 */
+        .exp-section-title { font-size: 22px; font-weight: bold; margin-bottom: 20px; text-align: left; border-bottom: 2px solid #1f2937; padding-bottom: 10px; }
+        .exp-list { display: flex; flex-direction: column; gap: 12px; }
+        .exp-btn { background: #f3f4f6; border: 1px solid #d1d5db; padding: 16px; font-size: 18px; font-weight: bold; text-align: left; border-radius: 8px; cursor: pointer; transition: all 0.2s; }
+        .exp-btn:hover { background: #e5e7eb; border-color: #9ca3af; transform: translateX(5px); }
+
+        /* 양옆 해설 보기 화면 */
+        #explanation-view { display: none; max-width: 1300px; margin: 30px auto; gap: 30px; padding: 0 20px; align-items: flex-start; }
+        .exp-left, .exp-right { background: white; border-radius: 12px; padding: 40px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .exp-left { flex: 6; border-top: 8px solid #374151; overflow-x: auto; }
+        .exp-right { flex: 4; border-top: 8px solid #10b981; position: sticky; top: 40px; font-size: 17px; line-height: 1.8; }
+        
+        /* 숨겨진 원본 해설 데이터 */
+        .sol-data-hidden { display: none; }
+
+        /* =========================================
+           📱 스마트폰(모바일) 환경을 위한 반응형 최적화
+           ========================================= */
+        @media (max-width: 850px) {
+            /* 1. 억지로 노출시키는 오류 코드를 지우고, 방향만 세로(column)로 꺾어줍니다 */
+            .main-wrapper, #explanation-view { 
+                flex-direction: column !important; 
+                padding: 0 10px; 
+                margin-top: 15px; 
+            }
+            
+            /* 3. 모바일용 문제 여백 조정 */
+            .problem-slide { padding: 20px 15px 30px; }
+            .problem-top-nav { padding: 15px 15px 0; }
+            
+            /* 4. 그래프(SVG) 크기 자동 조절 */
+            .assets-area { flex-direction: column !important; }
+            .svg-box { width: 100%; text-align: center; overflow-x: auto; }
+            .svg-box svg { max-width: 100%; height: auto; }
+            
+            /* 5. 5지선다 선택지 두 줄 배치 */
+            .options-group { flex-wrap: wrap; gap: 10px; justify-content: flex-start; }
+            .option-label { width: 45%; font-size: 16px; }
+
+            /* 6. OMR 답안지 가로형 콤팩트 디자인 (문제 밑에 다소곳하게 배치) */
+            .omr-sidebar { 
+                display: flex !important; 
+                flex-wrap: wrap; 
+                padding: 16px; 
+                gap: 8px; 
+            }
+            .omr-title { 
+                width: 100%; 
+                text-align: left; 
+                margin-bottom: 0; 
+                padding-bottom: 4px; 
+                font-size: 15px; 
+                border-bottom: none;
+            }
+            .omr-item { 
+                flex: 1; 
+                margin-bottom: 0; 
+                background: #f9fafb; 
+                padding: 8px; 
+                border-radius: 8px; 
+                justify-content: center; 
+                gap: 6px; 
+                font-size: 14px;
+            }
+        }
