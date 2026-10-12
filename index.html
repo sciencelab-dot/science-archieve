@@ -155,6 +155,14 @@
     
     <main class="container">
     
+    <!-- 💡 style.css 캐시 딜레이를 무시하기 위해 HTML에 디자인 직접 주입 -->
+    <style>
+        .filter-container { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; }
+        .filter-btn { padding: 8px 16px; border: 1px solid #e2e8f0; background-color: #ffffff; color: #475569; border-radius: 20px; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.2s ease; }
+        .filter-btn:hover { background-color: #f1f5f9; }
+        .filter-btn.active { background-color: #1e293b; color: #ffffff; border-color: #1e293b; }
+    </style>
+
     <!-- 과목 필터 버튼 영역 -->
     <div class="filter-container">
         <!-- 버튼 클릭 시 filterExams('과목태그', this) 함수가 실행됩니다 -->
