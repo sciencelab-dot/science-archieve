@@ -153,50 +153,71 @@
         <p> 통합과학 및 생명과학 모의고사 보관소</p>
     </header>
     
-    <main class="container">
-        <div class="grid">
+    <<main class="container">
+    
+    <!-- 과목 필터 버튼 영역 -->
+    <div class="filter-container">
+        <!-- 버튼 클릭 시 filterExams('과목태그', this) 함수가 실행됩니다 -->
+        <button class="filter-btn active" onclick="filterExams('all', this)">전체보기</button>
+        <button class="filter-btn" onclick="filterExams('earth', this)">지구과학</button>
+        <button class="filter-btn" onclick="filterExams('physics', this)">물리학</button>
+        <button class="filter-btn" onclick="filterExams('life', this)">생명과학</button>
+    </div>
 
-            <!-- ✅ 10월 12일 문제 박스 -->
-            <a href="2026-10-12.html" class="card">
-                <div class="card-header">
-                    <span class="date">2026. 10. 12</span>
-                    <span class="badge">총 2문항</span>
-                </div>
-                <div class="title">통합과학 지구과학 <br>실전 모의고사</div>
-                <div class="footer">
-                    문제 풀기
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                </div>
-                
-            <!-- ✅ 10월 8일 문제 박스 -->
-            <a href="2026-10-08.html" class="card">
-                <div class="card-header">
-                    <span class="date">2026. 10. 08</span>
-                    <span class="badge">총 3문항</span>
-                </div>
-                <div class="title">통합과학 역학 고난도<br>실전 모의고사</div>
-                <div class="footer">
-                    문제 풀기
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                </div>
+    <!-- 문제 박스가 자동으로 들어갈 빈 공간 -->
+    <div class="grid" id="exam-grid"></div>
 
+</main>
+        
+<!-- 데이터 파일 불러오기 -->
+<script src="exam-data.js"></script>
 
-            </a>
-            
-            <!-- ✅ 내일 추가할 문제 박스 예시 -->
-            <a href="#" class="card" style="opacity: 0.5;">
-                <div class="card-header">
-                    <span class="date">2026. 10. __</span>
-                    <span class="badge">업데이트 예정</span>
-                </div>
-                <div class="title">통합과학 <br>자료 해석</div>
-                <div class="footer" style="color:#9ca3af;">
-                    준비 중
-                </div>
-            </a>
+<!-- 필터링 및 화면 그리기 스크립트 -->
+<script>
+    const grid = document.getElementById("exam-grid");
 
-        </div>
-    </main>
+    // 1. 화면에 박스를 그려주는 함수
+    function renderExams(subjectFilter) {
+        grid.innerHTML = ""; // 기존에 그려진 박스들을 전부 지움
+
+        examList.forEach(exam => {
+            // 'all'이거나, 내가 누른 과목과 데이터의 과목이 일치할 때만 그림
+            if (subjectFilter === 'all' || exam.subject === subjectFilter) {
+                const cardHTML = `
+                    <a href="${exam.link}" class="card">
+                        <div class="card-header">
+                            <span class="date">${exam.date}</span>
+                            <span class="badge">총 ${exam.count}문항</span>
+                        </div>
+                        <div class="title">${exam.title} <br>실전 모의고사</div>
+                        <div class="footer">
+                            문제 풀기
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </div>
+                    </a>
+                `;
+                grid.innerHTML += cardHTML; // 화면에 밀어넣기
+            }
+        });
+    }
+
+    // 2. 버튼 클릭 시 작동하는 함수
+    function filterExams(subject, btnElement) {
+        // 모든 버튼의 색상을 원래대로(흰색) 되돌림
+        const buttons = document.querySelectorAll('.filter-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        
+        // 방금 클릭한 버튼만 색상을 진하게(활성화) 변경함
+        btnElement.classList.add('active');
+
+        // 선택한 과목에 맞춰서 화면 다시 그리기
+        renderExams(subject);
+    }
+
+    // 처음 사이트에 접속했을 때는 '전체보기'로 화면을 채움
+    renderExams('all');
+</script>
+
 
 </body>
 </html>
