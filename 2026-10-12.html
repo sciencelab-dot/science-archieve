@@ -25,7 +25,7 @@
         <div class="problem-area" style="flex: 1; background: #ffffff; border-radius: 8px; border-top: 5px solid #1e293b; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); padding: 32px; box-sizing: border-box;">
 
             <!-- 문제 1 -->
-            <div id="prob1" class="problem-slide" style="display: block;">
+            <div id="prob1" class="problem-slide active">
             <div id="prob1-content">
         
         <!-- 발문 -->
@@ -168,7 +168,7 @@
 </div> <!-- prob1 끝 -->
 
 <!-- ▼ 문제 2 영역 시작 ▼ -->
-<div id="prob2" class="problem-slide" style="display: none;">
+<div id="prob2" class="problem-slide">
     <div id="prob2-content">
         
         <!-- 발문 -->
@@ -302,10 +302,8 @@
 </div>
 </div> <!-- prob2 끝 -->
 
-            <!-- ========================================== -->
 <!-- ▼ 문제 3 영역 시작 (생명과학+지구과학 융합) ▼ -->
-<!-- ========================================== -->
-<div id="prob3" class="problem-slide" style="display: none;">
+<div id="prob3" class="problem-slide">
     <div id="prob3-content">
         
         <!-- 발문 -->
@@ -447,50 +445,54 @@
 
     <!-- 숨겨진 원본 해설 데이터 보관소 -->
     <div class="sol-data-hidden">
-        <!-- JS가 해설을 찾을 수 있도록 id="sol-1" 추가 -->
+        
+        <!-- ▼ 1번 해설 ▼ -->
         <div id="sol-1">
             <details class="answer-box" style="background-color: #f4f6f8; padding: 20px; border-radius: 8px;">
-                <summary style="font-weight: bold; cursor: pointer;">정답 및 해설 확인</summary>
+                <summary style="font-weight: bold; cursor: pointer;">정답 및 해설 확인 (1번)</summary>
                 <div style="margin-top: 15px; line-height: 1.6;">
                     <p style="margin-bottom: 10px; color: #e53e3e; font-weight: bold;">정답: ③</p>
                     <p style="margin-bottom: 10px;"><strong>[해설]</strong></p>
                     <p style="margin-bottom: 8px;"><strong>ㄱ.</strong> 판 A는 북서쪽, 판 B는 북동쪽으로 이동하므로 ㉠을 기준으로 양쪽으로 멀어지는 발산형 경계(해령)가 형성된다. 따라서 하부에는 상승하는 맨틀 물질이 존재한다.</p>
                     <p style="margin-bottom: 8px;"><strong>ㄴ.</strong> 열점에 의해 생성된 화산섬의 연령이 북동쪽으로 갈수록 증가(10→20→30 Ma)하므로, 화산섬을 실은 판 B의 이동 방향은 북동쪽이다. 이는 GPS 이동 방향 화살표와도 일치한다.</p>
                     <p><strong>ㄷ.</strong> 판 B는 북동쪽, 대륙판 C는 서북서쪽으로 이동하므로 ㉡에서 두 판은 수렴한다. 밀도가 큰 해양판 B가 대륙판 C 아래로 섭입하여 해구가 형성된다.</p>
-             </div>
-        <div id="sol-2">
-             <details class="answer-box" style="background-color: #f4f6f8; padding: 20px; border-radius: 8px;">
-                 <summary style="font-weight: bold; cursor: pointer;">정답 및 해설 확인 (2번)</summary>
-                 <div style="margin-top: 15px; line-height: 1.6; font-size: 14px;">
-                     <p style="margin-bottom: 10px; color: #e53e3e; font-weight: bold;">정답: ③ (ㄱ, ㄷ)</p>
-                     <p style="margin-bottom: 10px;"><strong>[문항 분석 및 출제 의도]</strong></p>
-                     <p style="margin-bottom: 10px; color:#475569;">이 문항은 통합과학의 두 핵심축인 '지각 구성 물질(규산염 사면체)'과 '신소재(반도체의 정류 작용)'를 <strong>'규소(Si)'라는 공통 원소</strong>를 매개로 통합하여 묻는 초고난도 문항입니다.</p>
-                     <p style="margin-bottom: 10px;"><strong>[해설]</strong></p>
-                     <p style="margin-bottom: 8px;"><strong>ㄱ. (참)</strong> 그림 (가)는 규산염 사면체이고 중심 원소 X는 규소(Si)입니다. 규소는 탄소(C)와 같은 14족 원소로 원자가 전자가 4개이므로, 최대 4개의 산소(Y) 원자와 공유 결합을 할 수 있습니다.</p>
-                     <p style="margin-bottom: 8px;"><strong>ㄴ. (거짓) [함정 보기]</strong> 규산염 사면체가 주변의 다른 사면체와 산소 원자를 공유할수록(독립형 → 단사슬 → 복사슬 → 판상 → 망상), 규소(X) 1개당 결합하는 산소의 비율은 오히려 <strong>감소</strong>합니다. (독립형은 1:4 이나, 망상형인 석영은 1:2의 비율을 가집니다.)</p>
-                     <p><strong>ㄷ. (참)</strong> 그래프 (다)를 보면 $t_1$ 시점에는 저항에 전류가 흐르고 있습니다(순방향 바이어스). p-n 접합 다이오드의 기호(▶|)에서 화살표 방향으로만 전류가 흐르므로, 회로의 위쪽 라인에서 오른쪽으로 전류가 흐르고 있음을 알 수 있습니다. 따라서 저항에는 A에서 B 방향으로 전류가 흐르며, 순방향 전압이 걸려 전류가 통과했으므로 다이오드의 p형 반도체 쪽이 교류 전원의 (+)극이 됩니다.</p>
-             </div>
-                 <!-- ▼ 3번 해설 ▼ -->
-<div id="sol-3">
-    <details class="answer-box" style="background-color: #f4f6f8; padding: 20px; border-radius: 8px;">
-        <summary style="font-weight: bold; cursor: pointer;">정답 및 해설 확인 (3번)</summary>
-        <div style="margin-top: 15px; line-height: 1.6; font-size: 14px;">
-            <p style="margin-bottom: 10px; color: #e53e3e; font-weight: bold;">정답: ④ (ㄴ, ㄷ)</p>
-            <p style="margin-bottom: 10px;"><strong>[문항 분석 및 출제 의도]</strong></p>
-            <p style="margin-bottom: 10px; color:#475569;">지구과학의 기후 변화(엘니뇨/라니냐)가 해양 생명과학의 에너지 흐름(광합성 및 먹이 그물)에 미치는 영향을 통합적으로 추론하는 문항입니다. 엘니뇨 시기의 용승 약화가 생태계 붕괴로 이어지는 실제 페루 연안의 어장 데이터를 기반으로 설계되었습니다.</p>
-            <p style="margin-bottom: 10px;"><strong>[해설]</strong></p>
-            <p style="margin-bottom: 8px;"><strong>ㄱ. (거짓)</strong> 그래프 (가)에서 Ⅰ 시기는 동태평양 수온 약층이 시작되는 깊이가 평년보다 깊은(+) <strong>엘니뇨</strong> 시기이고, Ⅱ 시기는 깊이가 얕아진(-) <strong>라니냐</strong> 시기입니다. 엘니뇨(Ⅰ)는 무역풍이 <strong>약화</strong>되어 따뜻한 해수가 동쪽으로 밀려올 때 발생합니다.</p>
-            <p style="margin-bottom: 8px;"><strong>ㄴ. (참)</strong> 빛에너지가 화학 에너지로 전환되는 과정은 식물성 플랑크톤의 <strong>탄소 동화 작용(광합성)</strong>입니다. (나)에서 생산자의 총생산량이 Ⅰ 시기(엘니뇨)에 Ⅱ 시기(라니냐)보다 현저히 적으므로, 에너지 전환 총량 역시 Ⅰ 시기가 적습니다.</p>
-            <p><strong>ㄷ. (참)</strong> 라니냐(Ⅱ 시기)에는 무역풍이 강해져 동태평양 연안의 <strong>용승(Upwelling)</strong> 현상이 평년보다 강해집니다. 이로 인해 심해의 풍부한 무기물과 영양 염류가 표층으로 다량 공급되어 식물성 플랑크톤이 대번성(녹조 띠 형성)하게 되며, 이는 1차 소비자인 동물성 플랑크톤과 멸치 어획량의 폭발적인 증가로 이어져 생태계 내 유기물 이동이 매우 활발해집니다.</p>
-        </div>
-    </details>
-</div>
-    </details>
-</div>               
                 </div>
             </details>
         </div>
-    </div>
+
+        <!-- ▼ 2번 해설 ▼ -->
+        <div id="sol-2">
+            <details class="answer-box" style="background-color: #f4f6f8; padding: 20px; border-radius: 8px;">
+                <summary style="font-weight: bold; cursor: pointer;">정답 및 해설 확인 (2번)</summary>
+                <div style="margin-top: 15px; line-height: 1.6; font-size: 14px;">
+                    <p style="margin-bottom: 10px; color: #e53e3e; font-weight: bold;">정답: ③ (ㄱ, ㄷ)</p>
+                    <p style="margin-bottom: 10px;"><strong>[문항 분석 및 출제 의도]</strong></p>
+                    <p style="margin-bottom: 10px; color:#475569;">이 문항은 통합과학의 두 핵심축인 '지각 구성 물질(규산염 사면체)'과 '신소재(반도체의 정류 작용)'를 <strong>'규소(Si)'라는 공통 원소</strong>를 매개로 통합하여 묻는 초고난도 문항입니다.</p>
+                    <p style="margin-bottom: 10px;"><strong>[해설]</strong></p>
+                    <p style="margin-bottom: 8px;"><strong>ㄱ. (참)</strong> 그림 (가)는 규산염 사면체이고 중심 원소 X는 규소(Si)입니다. 규소는 탄소(C)와 같은 14족 원소로 원자가 전자가 4개이므로, 최대 4개의 산소(Y) 원자와 공유 결합을 할 수 있습니다.</p>
+                    <p style="margin-bottom: 8px;"><strong>ㄴ. (거짓) [함정 보기]</strong> 규산염 사면체가 주변의 다른 사면체와 산소 원자를 공유할수록(독립형 → 단사슬 → 복사슬 → 판상 → 망상), 규소(X) 1개당 결합하는 산소의 비율은 오히려 <strong>감소</strong>합니다. (독립형은 1:4 이나, 망상형인 석영은 1:2의 비율을 가집니다.)</p>
+                    <p><strong>ㄷ. (참)</strong> 그래프 (다)를 보면 t₁ 시점에는 저항에 전류가 흐르고 있습니다(순방향 바이어스). p-n 접합 다이오드의 기호(▶|)에서 화살표 방향으로만 전류가 흐르므로, 회로의 위쪽 라인에서 오른쪽으로 전류가 흐르고 있음을 알 수 있습니다. 따라서 저항에는 A에서 B 방향으로 전류가 흐르며, 순방향 전압이 걸려 전류가 통과했으므로 다이오드의 p형 반도체 쪽이 교류 전원의 (+)극이 됩니다.</p>
+                </div>
+            </details>
+        </div>
+        
+        <!-- ▼ 3번 해설 ▼ -->
+        <div id="sol-3">
+            <details class="answer-box" style="background-color: #f4f6f8; padding: 20px; border-radius: 8px;">
+                <summary style="font-weight: bold; cursor: pointer;">정답 및 해설 확인 (3번)</summary>
+                <div style="margin-top: 15px; line-height: 1.6; font-size: 14px;">
+                    <p style="margin-bottom: 10px; color: #e53e3e; font-weight: bold;">정답: ④ (ㄴ, ㄷ)</p>
+                    <p style="margin-bottom: 10px;"><strong>[문항 분석 및 출제 의도]</strong></p>
+                    <p style="margin-bottom: 10px; color:#475569;">지구과학의 기후 변화(엘니뇨/라니냐)가 해양 생명과학의 에너지 흐름(광합성 및 먹이 그물)에 미치는 영향을 통합적으로 추론하는 문항입니다. 엘니뇨 시기의 용승 약화가 생태계 붕괴로 이어지는 실제 페루 연안의 어장 데이터를 기반으로 설계되었습니다.</p>
+                    <p style="margin-bottom: 10px;"><strong>[해설]</strong></p>
+                    <p style="margin-bottom: 8px;"><strong>ㄱ. (거짓)</strong> 그래프 (가)에서 Ⅰ 시기는 동태평양 수온 약층이 시작되는 깊이가 평년보다 깊은(+) <strong>엘니뇨</strong> 시기이고, Ⅱ 시기는 깊이가 얕아진(-) <strong>라니냐</strong> 시기입니다. 엘니뇨(Ⅰ)는 무역풍이 <strong>약화</strong>되어 따뜻한 해수가 동쪽으로 밀려올 때 발생합니다.</p>
+                    <p style="margin-bottom: 8px;"><strong>ㄴ. (참)</strong> 빛에너지가 화학 에너지로 전환되는 과정은 식물성 플랑크톤의 <strong>탄소 동화 작용(광합성)</strong>입니다. (나)에서 생산자의 총생산량이 Ⅰ 시기(엘니뇨)에 Ⅱ 시기(라니냐)보다 현저히 적으므로, 에너지 전환 총량 역시 Ⅰ 시기가 적습니다.</p>
+                    <p><strong>ㄷ. (참)</strong> 라니냐(Ⅱ 시기)에는 무역풍이 강해져 동태평양 연안의 <strong>용승(Upwelling)</strong> 현상이 평년보다 강해집니다. 이로 인해 심해의 풍부한 무기물과 영양 염류가 표층으로 다량 공급되어 식물성 플랑크톤이 대번성(녹조 띠 형성)하게 되며, 이는 1차 소비자인 동물성 플랑크톤과 멸치 어획량의 폭발적인 증가로 이어져 생태계 내 유기물 이동이 매우 활발해집니다.</p>
+                </div>
+            </details>
+        </div>
+
+    </div> <!-- sol-data-hidden 끝 -->
 
 </body>
 </html>
