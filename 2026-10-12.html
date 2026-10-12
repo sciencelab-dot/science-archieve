@@ -11,65 +11,169 @@
 </head>
 <body>
 
+    <!-- 목록으로 돌아가기 (bf3 스타일: 가장 상단 왼쪽에 자연스럽게 배치) -->
+    <div class="top-nav-bar" style="max-width: 1200px; margin: 10px auto; padding: 0 20px;">
+        <a href="index.html" class="btn-back-list" style="text-decoration: none; color: #4b5563; font-size: 13px; display: inline-flex; align-items: center; gap: 4px;">
+            ◀ 목록으로 돌아가기
+        </a>
+    </div>
+
     <!-- 문제 풀이 메인 화면 -->
-    <div id="test-view" class="main-wrapper">
+    <div id="test-view" class="main-wrapper" style="display: flex; gap: 24px; max-width: 1200px; margin: 0 auto; padding: 0 20px; align-items: flex-start;">
         
-        <!-- 왼쪽 문제 영역 -->
-        <div class="problem-area">
-            <div class="problem-top-nav">
-                <a href="index.html" class="btn-back-list">◀ 목록으로</a>
+        <!-- 왼쪽 문제 영역 (bf3의 카드 그림자, 둥근 테두리, 다크블루 상단 밴드 복원) -->
+        <div class="problem-area" style="flex: 1; background: #ffffff; border-radius: 8px; border-top: 5px solid #1e293b; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); padding: 32px; box-sizing: border-box;">
             </div>
 
-            <!-- 문제 1 (id="q1" 추가 권장) -->
-            <div class="question-container" id="q1" style="margin-bottom: 50px;">
-                <div class="question-text" style="font-size: 16px; line-height: 1.6; margin-bottom: 15px;">
-                    <strong>1.</strong> 그림은 판 A, B, C와 판의 경계 ㉠, ㉡을 나타낸 것이다. 화살표는 GPS로 측정한 판의 평균 이동 속도의 크기와 방향을, 표는 판 B 내부에 위치한 열점에서 생성된 화산섬 a, b, c의 절대 연령을 나타낸 것이다. 이에 대한 설명으로 옳은 것만을 &lt;보기&gt;에서 있는 대로 고른 것은?
-                </div>
+            <!-- 문제 1 -->
+<div id="prob1" class="problem-slide">
+    <div id="prob1-content">
+        
+        <!-- 발문 -->
+        <div class="header-text" style="font-size: 15px; font-weight: 500; line-height: 1.6; color: #1f2937; margin-bottom: 24px;">
+            <span class="question-num" style="font-size: 16px; font-weight: bold; margin-right: 4px;">1.</span> 
+            그림은 판 A, B, C와 판의 경계 ㉠, ㉡을 나타낸 것이다. 화살표는 GPS로 측정한 판의 평균 이동 속도의 크기와 방향을, 표는 판 B 내부에 위치한 열점에서 생성된 화산섬 a, b, c의 절대 연령을 나타낸 것이다. 이에 대한 설명으로 옳은 것만을 &lt;보기&gt;에서 있는 대로 고른 것은?
+        </div>
 
-                <!-- 그림 및 자료 영역 -->
-                <div class="question-image" style="text-align: center; margin: 20px 0;">
-                    <img src="./assets/images/plate_hotspot_q1.png" alt="판의 이동과 열점 화산도 분포" style="max-width: 100%; height: auto;">
-                </div>
+        <!-- 자료 영역 (지도 + 표) -->
+        <div class="materials-wrapper" style="display: flex; gap: 20px; align-items: center; justify-content: center; flex-wrap: wrap; margin: 24px 0;">
+            <!-- 왼쪽: 고해상도 인라인 SVG 지도 -->
+            <div style="flex: 1.2; min-width: 280px; max-width: 380px;">
+                <svg viewBox="0 0 320 220" style="width: 100%; height: auto; border: 1.2px solid #a1a1aa; border-radius: 4px; background: #ffffff; font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;">
+                    <!-- 판 영역 배경 및 경계선 -->
+                    <rect x="0" y="0" width="90" height="220" fill="#eff6ff" />
+                    <rect x="90" y="0" width="130" height="220" fill="#f8fafc" />
+                    <rect x="220" y="0" width="110" height="220" fill="#fef3c7" fill-opacity="0.5" />
+                    
+                    <line x1="90" y1="0" x2="90" y2="220" stroke="#000000" stroke-width="1.8" />
+                    <line x1="220" y1="0" x2="220" y2="220" stroke="#000000" stroke-width="1.8" />
 
-                <div class="question-table" style="display: flex; justify-content: center; margin: 20px 0;">
-                    <table style="border-collapse: collapse; text-align: center; width: 350px; border-top: 2px solid #000; border-bottom: 2px solid #000;">
-                        <thead>
-                            <tr style="border-bottom: 1px solid #000;">
-                                <th style="padding: 10px; font-weight: normal;">화산섬</th>
-                                <th style="padding: 10px; font-weight: normal;">a</th>
-                                <th style="padding: 10px; font-weight: normal;">b</th>
-                                <th style="padding: 10px; font-weight: normal;">c</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td style="padding: 10px; border-right: 1px solid #ccc;">절대 연령(Ma)</td>
-                                <td style="padding: 10px;">10</td>
-                                <td style="padding: 10px;">20</td>
-                                <td style="padding: 10px;">30</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                    <!-- 판 이름 라벨 -->
+                    <text x="45" y="200" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">해양판 A</text>
+                    <text x="155" y="200" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">해양판 B</text>
+                    <text x="270" y="200" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">대륙판 C</text>
 
-                <!-- 보기 영역 -->
-                <div class="question-bogi" style="border: 1px solid #000; padding: 20px; margin: 20px 0;">
-                    <div style="text-align: center; margin-bottom: 15px;">&lt;보 기&gt;</div>
-                    <div style="margin-bottom: 8px;">ㄱ. ㉠ 하부에는 상승하는 맨틀 물질이 존재한다.</div>
-                    <div style="margin-bottom: 8px;">ㄴ. 판 B는 남서쪽 방향으로 이동하고 있다.</div>
-                    <div>ㄷ. ㉡ 하부에서는 판 B가 판 C 아래로 섭입한다.</div>
-                </div>
+                    <!-- 경계 ㉠, ㉡ 기호 -->
+                    <circle cx="90" cy="35" r="9" fill="#ffffff" stroke="#000000" stroke-width="1" />
+                    <text x="90" y="39" font-size="11" text-anchor="middle" font-weight="bold">㉠</text>
 
-                <!-- 선지 영역 -->
-  <div class="options-group">
-      <label class="option-label"><input type="radio" name="ans1" value="1" onclick="markAnswer(1, 1)"> ① ㄱ</label>
-      <label class="option-label"><input type="radio" name="ans1" value="2" onclick="markAnswer(1, 2)"> ② ㄷ</label>
-      <label class="option-label"><input type="radio" name="ans1" value="3" onclick="markAnswer(1, 3)"> ③ ㄱ, ㄷ</label>
-      <label class="option-label"><input type="radio" name="ans1" value="4" onclick="markAnswer(1, 4)"> ④ ㄴ, ㄷ</label>
-      <label class="option-label"><input type="radio" name="ans1" value="5" onclick="markAnswer(1, 5)"> ⑤ ㄱ, ㄴ, ㄷ</label>
-  </div>
-            </div> <!-- question-container 끝 -->
-        </div> <!-- problem-area 끝 -->
+                    <circle cx="220" cy="35" r="9" fill="#ffffff" stroke="#000000" stroke-width="1" />
+                    <text x="220" y="39" font-size="11" text-anchor="middle" font-weight="bold">㉡</text>
+
+                    <!-- GPS 이동 속도 벡터 -->
+                    <!-- A판 (북서쪽) -->
+                    <g stroke="#2563eb" stroke-width="1.8" fill="none">
+                        <path d="M 60 70 L 40 50" /> <polygon points="40,50 48,51 44,56" fill="#2563eb" stroke="none"/>
+                        <path d="M 55 120 L 35 100" /> <polygon points="35,100 43,101 39,106" fill="#2563eb" stroke="none"/>
+                    </g>
+                    <!-- B판 (북동쪽) -->
+                    <g stroke="#dc2626" stroke-width="1.8" fill="none">
+                        <path d="M 115 150 L 135 135" /> <polygon points="135,135 127,139 131,144" fill="#dc2626" stroke="none"/>
+                        <path d="M 190 65 L 210 50" /> <polygon points="210,50 202,54 206,59" fill="#dc2626" stroke="none"/>
+                    </g>
+                    <!-- C판 (서북서쪽) -->
+                    <g stroke="#16a34a" stroke-width="1.8" fill="none">
+                        <path d="M 285 85 L 260 80" /> <polygon points="260,80 268,83 266,76" fill="#16a34a" stroke="none"/>
+                        <path d="M 275 145 L 250 140" /> <polygon points="250,140 258,143 256,136" fill="#16a34a" stroke="none"/>
+                    </g>
+
+                    <!-- 열점과 화산섬 -->
+                    <!-- 열점 (0 Ma) -->
+                    <g transform="translate(105, 120)">
+                        <polygon points="0,-9 2.5,-2.5 9,-2.5 4,1.5 6,8 0,4.5 -6,8 -4,1.5 -9,-2.5 -2.5,-2.5" fill="#dc2626" stroke="#000" stroke-width="0.5"/>
+                        <text x="-2" y="15" font-size="9.5" font-weight="bold" fill="#dc2626" text-anchor="middle">열점(0)</text>
+                    </g>
+                    <!-- 화산섬 a, b, c -->
+                    <circle cx="132" cy="100" r="4.5" fill="#64748b" stroke="#000" stroke-width="0.8" />
+                    <text x="132" y="91" font-size="9" text-anchor="middle" font-weight="bold">a(10)</text>
+
+                    <circle cx="159" cy="80" r="4.5" fill="#64748b" stroke="#000" stroke-width="0.8" />
+                    <text x="159" y="71" font-size="9" text-anchor="middle" font-weight="bold">b(20)</text>
+
+                    <circle cx="186" cy="60" r="4.5" fill="#64748b" stroke="#000" stroke-width="0.8" />
+                    <text x="186" y="51" font-size="9" text-anchor="middle" font-weight="bold">c(30)</text>
+
+                    <text x="155" y="132" font-size="8.5" fill="#475569" text-anchor="middle">(단위: Ma)</text>
+
+                    <!-- 방위표 -->
+                    <g transform="translate(295, 35)">
+                        <line x1="0" y1="-15" x2="0" y2="15" stroke="#000" stroke-width="1.2"/>
+                        <line x1="-12" y1="0" x2="12" y2="0" stroke="#000" stroke-width="0.5"/>
+                        <polygon points="0,-17 -3,-10 3,-10" fill="#000" />
+                        <text x="0" y="-20" font-size="9" font-weight="bold" text-anchor="middle">N</text>
+                    </g>
+
+                    <!-- 범례 -->
+                    <g transform="translate(12, 22)">
+                        <line x1="0" y1="0" x2="20" y2="0" stroke="#000" stroke-width="1.2"/>
+                        <polygon points="20,0 16,-2 16,2" fill="#000" stroke="none" />
+                        <text x="24" y="3" font-size="8.5" fill="#334155" font-weight="bold">GPS 이동 방향</text>
+                    </g>
+                </svg>
+            </div>
+
+            <!-- 오른쪽: 화산섬 연령 표 -->
+            <div style="flex: 0.9; min-width: 200px;">
+                <table style="border-collapse: collapse; text-align: center; width: 100%; font-size: 13px; font-family: sans-serif; border-top: 2px solid #000000; border-bottom: 2px solid #000000;">
+                    <thead>
+                        <tr style="border-bottom: 1.2px solid #000000; background-color: #fafafa;">
+                            <th style="padding: 10px 4px; font-weight: 500; border-right: 1px solid #e5e7eb;">화산섬</th>
+                            <th style="padding: 10px 4px; font-weight: normal;">a</th>
+                            <th style="padding: 10px 4px; font-weight: normal;">b</th>
+                            <th style="padding: 10px 4px; font-weight: normal;">c</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 12px 4px; font-weight: 500; background-color: #fafafa; border-right: 1px solid #e5e7eb;">절대 연령(Ma)</td>
+                            <td style="padding: 12px 4px;">10</td>
+                            <td style="padding: 12px 4px;">20</td>
+                            <td style="padding: 12px 4px;">30</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 보기 박스 -->
+        <div class="question-bogi" style="border: 1px solid #000000; padding: 20px; margin: 24px 0; font-size: 14.5px; line-height: 1.7; border-radius: 2px;">
+            <div style="text-align: center; font-weight: bold; margin-bottom: 15px; font-size: 14px;">&lt;보 기&gt;</div>
+            <div style="margin-bottom: 8px; display: flex; gap: 4px;">
+                <span>ㄱ.</span> <span>㉠ 하부에는 상승하는 맨틀 물질이 존재한다.</span>
+            </div>
+            <div style="margin-bottom: 8px; display: flex; gap: 4px;">
+                <span>ㄴ.</span> <span>판 B는 남서쪽 방향으로 이동하고 있다.</span>
+            </div>
+            <div style="display: flex; gap: 4px;">
+                <span>ㄷ.</span> <span>㉡ 하부에서는 판 B가 판 C 아래로 섭입한다.</span>
+            </div>
+        </div>
+
+    </div> <!-- prob1-content 끝 -->
+
+    <!-- 선지 영역 -->
+    <div class="options-group">
+        <label class="option-label"><input type="radio" name="ans1" value="1" onclick="markAnswer(1, 1)"> ① ㄱ</label>
+        <label class="option-label"><input type="radio" name="ans1" value="2" onclick="markAnswer(1, 2)"> ② ㄷ</label>
+        <label class="option-label"><input type="radio" name="ans1" value="3" onclick="markAnswer(1, 3)"> ③ ㄱ, ㄷ</label>
+        <label class="option-label"><input type="radio" name="ans1" value="4" onclick="markAnswer(1, 4)"> ④ ㄴ, ㄷ</label>
+        <label class="option-label"><input type="radio" name="ans1" value="5" onclick="markAnswer(1, 5)"> ⑤ ㄱ, ㄴ, ㄷ</label>
+    </div>
+
+    <!-- 하단 네비게이션 버튼 -->
+    <div class="nav-buttons" style="display: flex; justify-content: space-between; align-items: center; padding-top: 15px;">
+        <!-- 1번 문제이므로 이전 버튼은 숨김 처리 -->
+        <button class="btn-nav btn-prev" style="visibility: hidden;">◀ 이전 문제</button>
+        <button class="btn-nav btn-next" onclick="navProb(2)">다음 문제 ▶</button>
+    </div>
+</div> <!-- prob1 끝 -->
+
+<!-- 문제 2 -->
+<div id="prob2" class="problem-slide" style="display: none;">
+    <div id="prob2-content">
+        <!-- 2번 문제 내용은 여기에 추가 -->
+    </div>
+</div>
 
         <!-- 오른쪽 OMR 사이드바 -->
         <div class="omr-sidebar">
