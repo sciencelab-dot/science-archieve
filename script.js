@@ -86,21 +86,23 @@ function openExplanation(probNum) {
     document.getElementById('result-screen').style.display = 'none';
     document.getElementById('explanation-view').style.display = 'flex';
 
-    // 2. HTML에 숨겨둔 해설 데이터를 찾습니다. (💡 'sol-data-' 가 아니라 'sol-' 로 수정!)
+    // 2. 오른쪽 빈 공간에 '해설' 채우기
     let hiddenSol = document.getElementById('sol-' + probNum);
-    
-    // 해설이 표시될 오른쪽 영역을 찾습니다.
-    let displayArea = document.getElementById('exp-content-area') || document.querySelector('.exp-right');
+    let displayArea = document.getElementById('exp-content-area');
 
     if (hiddenSol && displayArea) {
         displayArea.innerHTML = hiddenSol.innerHTML;
+    }
+
+    // 3. 💡 왼쪽 빈 공간에 '문제' 채우기 (새로 추가된 핵심 코드!)
+    let leftContainer = document.getElementById('exp-left-container');
+    let originalProb = document.getElementById('prob-' + probNum); // 문제 구역을 찾습니다 (prob-1, prob-2 등)
+    
+    if (originalProb && leftContainer) {
+        // 문제 HTML을 그대로 왼쪽 뷰어에 복사합니다.
+        leftContainer.innerHTML = originalProb.innerHTML;
     } else {
-        // 데이터를 찾지 못했을 때 화면에 띄워줄 에러 메시지
-        if (displayArea) {
-            displayArea.innerHTML = `<div style="padding: 20px; color: #dc2626; font-weight: bold;">
-                해설 데이터를 찾을 수 없습니다.<br>HTML 파일에 id="sol-${probNum}" 구역이 있는지 확인해 주세요.
-            </div>`;
-        }
+        if (leftContainer) leftContainer.innerHTML = "<div style='padding:20px;'>문제 데이터를 불러올 수 없습니다.</div>";
     }
 }
     
