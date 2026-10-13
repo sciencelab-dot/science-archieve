@@ -102,6 +102,7 @@ function openExplanation(probNum) {
             </div>`;
         }
     }
+}
     
     // 분할 해설 창 닫고 결과 창으로 복귀
     function closeExplanation() {
