@@ -81,17 +81,28 @@
     }
 
     // 양옆 분할 해설 뷰어 열기
-    function openExplanation(probNum) {
-        document.getElementById('result-screen').style.display = 'none';
-        document.getElementById('explanation-view').style.display = 'flex';
-        
-        const contentHtml = document.getElementById('prob' + probNum + '-content').innerHTML;
-        document.getElementById('exp-left-container').innerHTML = contentHtml;
-        
-        const solHtml = document.getElementById('sol' + probNum + '-data').innerHTML;
-        document.getElementById('exp-right-content').innerHTML = solHtml;
-    }
+function openExplanation(probNum) {
+    // 1. 화면 전환 (결과 숨기고 해설창 열기)
+    document.getElementById('result-screen').style.display = 'none';
+    document.getElementById('explanation-view').style.display = 'flex';
 
+    // 2. HTML에 숨겨둔 해설 데이터를 찾습니다. (💡 'sol-data-' 가 아니라 'sol-' 로 수정!)
+    let hiddenSol = document.getElementById('sol-' + probNum);
+    
+    // 해설이 표시될 오른쪽 영역을 찾습니다.
+    let displayArea = document.getElementById('exp-content-area') || document.querySelector('.exp-right');
+
+    if (hiddenSol && displayArea) {
+        displayArea.innerHTML = hiddenSol.innerHTML;
+    } else {
+        // 데이터를 찾지 못했을 때 화면에 띄워줄 에러 메시지
+        if (displayArea) {
+            displayArea.innerHTML = `<div style="padding: 20px; color: #dc2626; font-weight: bold;">
+                해설 데이터를 찾을 수 없습니다.<br>HTML 파일에 id="sol-${probNum}" 구역이 있는지 확인해 주세요.
+            </div>`;
+        }
+    }
+    
     // 분할 해설 창 닫고 결과 창으로 복귀
     function closeExplanation() {
         document.getElementById('explanation-view').style.display = 'none';
